@@ -10,24 +10,8 @@
 (require 'init-global-configs)
 (require 'init-packages)
 (require 'init-frame)
-(require 'init-ruby)
+(require 'init-programming-settings)
 (require 'init-mew)
-
-;; flycheck
-(add-hook 'emacs-lisp-mode-hook 'flycheck-mode)
-(add-hook 'ruby-mode-hook 'flycheck-mode)
-
-;; helm
-(require 'helm-config)
-;(require 'helm-migemo)
-(require 'helm-rb)
-(require 'helm-rails)
-
-;; 
-(global-set-key (kbd "C-c h") 'helm-mini)
-(helm-mode t)
-;(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
-;(define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
