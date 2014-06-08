@@ -10,5 +10,7 @@
 (set-fontset-font nil 'japanese-jisx0208
  (font-spec :family "Hiragino Kaku Gothic ProN"))
 
+(tool-bar-mode -1)
+
 (provide 'init-frame)
 ;;; init-frame.el ends here
