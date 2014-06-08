@@ -28,6 +28,9 @@
 	    (when (package-installed-p 'google-this)
 	      (google-this-mode t))
 
+	    ;; auto-complete
+	    (ac-config-default)
+
 	    ;; key binding
 	    (load-library "term/bobcat")
 	    (when (fboundp 'terminal-init-bobcat) (terminal-init-bobcat))

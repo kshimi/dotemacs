@@ -6,6 +6,10 @@
 (add-hook 'after-init-hook
 	  (lambda ()
 
+	    (setq electric-indent-disable-modes-list
+		  '(sql-mode
+		    ))
+
 	    (global-flycheck-mode t)
 
 	    (require 'init-ruby)
