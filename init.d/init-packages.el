@@ -10,8 +10,17 @@
 (require 'cl)
 
 (defvar installing-package-list
-  '(flycheck
+  '(
     helm
+    flycheck
+    auto-complete
+    google-this
+    mew
+    markdown-mode
+    ruby-block
+    rspec-mode
+    feature-mode
+    scss-mode
     ))
 
 (let ((not-installed (loop for x in installing-package-list
