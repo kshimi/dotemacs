@@ -15,6 +15,10 @@
 (ruby-block-mode t)
 (setq ruby-block-highlight-toggle 'overlay)
 
+;; rvm
+(require 'rvm)
+(rvm-use-default)
+
 ;(add-hook 'ruby-mode-hook 'robe-mode)
 ;(add-hook 'ruby-mode-hook 'ac-robe-setup)
 

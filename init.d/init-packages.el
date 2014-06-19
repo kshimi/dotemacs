@@ -25,6 +25,7 @@
     rspec-mode
     feature-mode
     scss-mode
+    rvm
     ))
 
 (let ((not-installed (loop for x in installing-package-list
