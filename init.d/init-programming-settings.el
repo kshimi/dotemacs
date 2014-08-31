@@ -12,6 +12,8 @@
 
 	    (global-flycheck-mode t)
 
+	    (setq scss-compile-at-save nil)
+
 	    (require 'init-ruby)
 	    ))
 
