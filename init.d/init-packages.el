@@ -17,8 +17,8 @@
     auto-complete
     undo-tree
     mew
-    projectile
-    helm-projectile
+;    projectile
+;    helm-projectile
     google-this
     markdown-mode
     ruby-block

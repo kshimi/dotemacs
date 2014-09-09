@@ -2,7 +2,7 @@
 
 ;;; Commentary:
 ;;; Code:
-(setq debug-on-error t)
+;(setq debug-on-error t)
 ;(let ((default-directory "~/.emacs.d"))
 ;  (normal-top-level-add-subdirs-to-load-path))
 (add-to-list 'load-path "~/.emacs.d/init.d/")
