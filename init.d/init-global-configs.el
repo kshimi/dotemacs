@@ -34,7 +34,7 @@
 	      (google-this-mode t))
 
 	    ;; auto-complete
-	    (ac-config-default)
+;	    (ac-config-default)
 
 	    ;; key binding
 	    (load-library "term/bobcat")

@@ -11,21 +11,22 @@
 
 (defvar installing-package-list
   '(
-    anzu
+    async
+;    anzu
     helm
-    flycheck
-    auto-complete
-    undo-tree
+;    flycheck
+;    auto-complete
+;    undo-tree
     mew
 ;    projectile
 ;    helm-projectile
-    google-this
-    markdown-mode
-    ruby-block
-    rspec-mode
-    feature-mode
-    scss-mode
-    rvm
+;    google-this
+;    markdown-mode
+;    ruby-block
+;    rspec-mode
+;    feature-mode
+;    scss-mode
+;    rvm
     ))
 
 (let ((not-installed (loop for x in installing-package-list

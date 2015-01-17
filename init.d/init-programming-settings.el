@@ -10,12 +10,12 @@
 		  '(sql-mode
 		    ))
 
-	    (global-flycheck-mode t)
+;	    (global-flycheck-mode t)
 
-	    (setq scss-compile-at-save nil)
+;	    (setq scss-compile-at-save nil)
 
-	    (require 'rubocop)
-	    (require 'init-ruby)
+;	    (require 'rubocop)
+;	    (require 'init-ruby)
 	    ))
 
 (provide 'init-programming-settings)
