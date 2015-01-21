@@ -29,6 +29,10 @@
 	      (helm-mode 1)
 	      )
 
+	    (when (package-installed-p 'projectile)
+	      (projectile-global-mode)
+	      )
+
 	    ;; google-this
 	    (when (package-installed-p 'google-this)
 	      (google-this-mode t))
