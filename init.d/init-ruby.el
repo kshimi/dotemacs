@@ -24,14 +24,15 @@
 ;(setq ruby-electric-expand-delimiters-list nil)
 
 ;; start compile
-;(require 'smart-compile)
-;(define-key ruby-mode-map (kbd "C-c c") 'smart-compile)
-;(define-key ruby-mode-map (kbd "C-c C-c") (kbd "C-c c C-m"))
-
+(require 'smart-compile)
+(define-key ruby-mode-map (kbd "C-c C-c") 'smart-compile)
 
 ;; Cucumber support mode
-(require 'feature-mode)
-(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+;(require 'feature-mode)
+;(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
+;; ruby debugger (rubydb3x.el)
+(autoload 'rubydb "rubydb3x" nil t)
 
 (provide 'init-ruby)
 ;;; init-ruby.el ends here

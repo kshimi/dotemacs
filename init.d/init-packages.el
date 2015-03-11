@@ -3,7 +3,7 @@
 ;;; Commentary:
 ;;; Code:
 (require 'package)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
@@ -12,6 +12,7 @@
 (defvar installing-package-list
   '(
     async
+    exec-path-from-shell
 ;    anzu
     helm
 ;    flycheck
@@ -28,6 +29,12 @@
 ;    rspec-mode
 ;    feature-mode
 ;    scss-mode
+    smart-compile
+    ;; Rubikitch recommended
+    open-junk-file
+    lispxmp
+    paredit
+    auto-async-byte-compile
     ))
 
 (let ((not-installed (loop for x in installing-package-list

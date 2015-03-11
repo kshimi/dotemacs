@@ -15,7 +15,7 @@
 ;	    (setq scss-compile-at-save nil)
 
 ;	    (require 'rubocop)
-;	    (require 'init-ruby)
+	    (require 'init-ruby)
 	    ))
 
 (provide 'init-programming-settings)

@@ -6,6 +6,7 @@
 ;(let ((default-directory "~/.emacs.d"))
 ;  (normal-top-level-add-subdirs-to-load-path))
 (add-to-list 'load-path "~/.emacs.d/init.d/")
+(add-to-list 'load-path "~/.emacs.d/lib.d/")
 
 (require 'init-global-configs)
 (require 'init-packages)
