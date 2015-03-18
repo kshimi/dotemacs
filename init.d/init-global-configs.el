@@ -8,9 +8,17 @@
 	  (lambda ()
 
 	    ;; Mac OS X specific settings
-	    (when (package-installed-p 'exec-path-from-shell)
-	      (when (memq window-system '(mac ns))
-		(exec-path-from-shell-initialize)))
+	    (when (memq window-system '(mac ns))
+	      (lambda ()
+		(when (package-installed-p 'exec-path-from-shell)
+		  (exec-path-from-shell-initialize))
+		(setq (default-input-method "MacOSX"))))
+
+	    ;; Linux specific settings
+	    (when (memq window-system '(x))
+	      (lambda ()
+		(require 'mozc)
+		(setq default-input-method "japanese-mozc")))
 
 	    ;; helm
 	    (when (package-installed-p 'helm)
@@ -83,11 +91,11 @@
 	    (define-key emacs-lisp-mode-map (kbd "C-c C-d") 'lispxmp)
 	    
 	    ;;括弧の対応を保持して編集する設定
-	    (require 'paredit) 
-	    (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode) 
-	    (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode) 
-	    (add-hook 'lisp-mode-hook 'enable-paredit-mode) 
-	    (add-hook 'ielm-mode-hook 'enable-paredit-mode)
+	    ;; (require 'paredit) 
+	    ;; (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode) 
+	    ;; (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode) 
+	    ;; (add-hook 'lisp-mode-hook 'enable-paredit-mode) 
+	    ;; (add-hook 'ielm-mode-hook 'enable-paredit-mode)
 
 	    ;;自動バイトコンパイル
 	    (require 'auto-async-byte-compile) 
@@ -104,7 +112,7 @@
 	    (show-paren-mode 1) 
 
 	    ;;改行と同時にインデントも行う
-	    (global-set-key "\C-j" 'newline-and-indent) 
+;	    (global-set-key "\C-j" 'newline-and-indent) 
 
 	    ;; find-functionをキー割り当てする
 	    (find-function-setup-keys)

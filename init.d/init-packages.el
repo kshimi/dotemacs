@@ -25,7 +25,7 @@
     magit
 ;    google-this
 ;    markdown-mode
-;    ruby-block
+    ruby-block
 ;    rspec-mode
 ;    feature-mode
 ;    scss-mode
