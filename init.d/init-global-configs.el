@@ -9,16 +9,14 @@
 
 	    ;; Mac OS X specific settings
 	    (when (memq window-system '(mac ns))
-	      (lambda ()
-		(when (package-installed-p 'exec-path-from-shell)
-		  (exec-path-from-shell-initialize))
-		(setq (default-input-method "MacOSX"))))
+	      (when (package-installed-p 'exec-path-from-shell)
+		(exec-path-from-shell-initialize))
+	      (setq default-input-method "MacOSX"))
 
 	    ;; Linux specific settings
 	    (when (memq window-system '(x))
-	      (lambda ()
-		(require 'mozc)
-		(setq default-input-method "japanese-mozc")))
+	      (require 'mozc)
+	      (setq default-input-method "japanese-mozc"))
 
 	    ;; helm
 	    (when (package-installed-p 'helm)
@@ -51,10 +49,6 @@
 	    ;; key binding
 	    (load-library "term/bobcat")
 	    (when (fboundp 'terminal-init-bobcat) (terminal-init-bobcat))
-
-	    ;; exec-path
-	    (when (memq window-system '(mac ns))
-	      (exec-path-from-shell-initialize))
 
 	    ;; org-mode
 	    (require 'org)
@@ -116,6 +110,9 @@
 
 	    ;; find-functionをキー割り当てする
 	    (find-function-setup-keys)
+
+	    (require 'undohist)
+	    (undohist-initialize)
 
 	    ))
 

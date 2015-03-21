@@ -33,8 +33,9 @@
     ;; Rubikitch recommended
     open-junk-file
     lispxmp
-    paredit
+;    paredit
     auto-async-byte-compile
+    undohist
     ))
 
 (let ((not-installed (loop for x in installing-package-list

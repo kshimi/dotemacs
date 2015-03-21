@@ -3,7 +3,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(when (eq (window-system) 'mac)   
+(when (memq window-system '(mac ns))
   (setq initial-frame-alist
 	'((top . 22) (left . 1610)
 	  (height . 99) (width . 130)))
@@ -11,7 +11,7 @@
 		    (font-spec :family "Hiragino Kaku Gothic ProN"))
   )
 
-(when (eq (window-system) 'x)
+(when (memq window-system '(x))
   (setq initial-frame-alist
 	'((height . 50) (width . 99)))
   (set-fontset-font nil 'japanese-jisx0208
