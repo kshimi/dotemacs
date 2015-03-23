@@ -1,6 +1,15 @@
+*~
+\#*
 *.elc
+session.*
+.DS_Store
+/recentf
+/undohist
+/projectile-bookmarks.eld
 /ac-comphist.dat
 /elpa
 /eshell
 /url
 /var
+/auto-save-list
+emacs-proxy.el
