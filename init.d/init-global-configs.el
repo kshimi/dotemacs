@@ -115,9 +115,17 @@
 	    (undohist-initialize)
 
 	    ;; migemo
-	    (setq migemo-command "/usr/bin/cmigemo")
+	    (when (memq window-system '(mac ns))
+	      (setq migemo-command "/usr/local/bin/cmigemo")
+	      (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
+	      )
+
+	    (when (memq window-system '(x))
+	      (setq migemo-command "/usr/bin/cmigemo")
+	      (setq migemo-dictionary "/usr/share/cmigemo/utf-8/migemo-dict")
+	      )
+
 	    (setq migemo-options '("-q" "--emacs"))
-	    (setq migemo-dictionary "/usr/share/cmigemo/utf-8/migemo-dict")
 	    (setq migemo-user-dictionary nil)
 	    (setq migemo-regex-dictionary nil)
 	    (setq migemo-coding-system 'utf-8-unix)
