@@ -20,6 +20,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (misterioso)))
- )
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 
 ;;; init.el ends here

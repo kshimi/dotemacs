@@ -114,6 +114,25 @@
 	    (require 'undohist)
 	    (undohist-initialize)
 
+	    ;; migemo
+	    (setq migemo-command "/usr/bin/cmigemo")
+	    (setq migemo-options '("-q" "--emacs"))
+	    (setq migemo-dictionary "/usr/share/cmigemo/utf-8/migemo-dict")
+	    (setq migemo-user-dictionary nil)
+	    (setq migemo-regex-dictionary nil)
+	    (setq migemo-coding-system 'utf-8-unix)
+	    (load-library "migemo")
+	    (migemo-init)
+
+	    (require 'ace-jump-mode)
+	    (setq ace-jump-mode-gray-background nil)
+	    (setq ace-jump-word-mode-use-query-char nil)
+	    (setq ace-jump-mode-move-keys
+		  (append "asdfghjkl;:]qwertyuiop@zxcvbnm,." nil))
+	    (global-set-key (kbd "C-:") 'ace-jump-word-mode)
+
+	    (smart-cursor-color-mode 1)
+
 	    ))
 
 (provide 'init-global-configs)
