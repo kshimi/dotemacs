@@ -3,16 +3,12 @@
 ;;; Commentary:
 ;;; Code:
 ;(setq debug-on-error t)
-;(let ((default-directory "~/.emacs.d"))
-;  (normal-top-level-add-subdirs-to-load-path))
-(add-to-list 'load-path "~/.emacs.d/init.d/")
-(add-to-list 'load-path "~/.emacs.d/lib.d/")
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
 
-(require 'init-global-configs)
-(require 'init-packages)
-(require 'init-frame)
-(require 'init-programming-settings)
-(require 'init-mew)
+(require 'init-loader)
+(init-loader-load "~/.emacs.d/init.d/")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -20,7 +16,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (misterioso)))
- '(show-paren-mode t)
- '(tool-bar-mode nil))
+ )
 
 ;;; init.el ends here

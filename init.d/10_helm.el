@@ -1,0 +1,16 @@
+;; helm
+(when (package-installed-p 'helm)
+  (setq helm-command-prefix-key "C-c h")
+
+;	      (require 'helm-config)
+;	      (require 'helm-eshell)
+;	      (require 'helm-files)
+;	      (require 'helm-grep)
+	      ;;(require 'helm-migemo)
+;	      (require 'helm-rb)
+;	      (require 'helm-rails)
+;	      (global-set-key (kbd "C-c h") 'helm-mini)
+  (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+  (global-set-key (kbd "C-x b") 'helm-mini)
+  (helm-mode 1)
+  )
