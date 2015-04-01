@@ -1,5 +1,5 @@
 ;; ace-jump-mode
-(when (package-instaled-p 'ace-jumk-mode)
+(when (package-installed-p 'ace-jump-mode)
   (require 'ace-jump-mode)
   (setq ace-jump-mode-gray-background nil)
   (setq ace-jump-word-mode-use-query-char nil)
