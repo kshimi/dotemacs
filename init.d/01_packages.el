@@ -7,7 +7,7 @@
     helm
     migemo
     magit
-    ace-jumk-mode
+    ace-jump-mode
     undohist
     mew
     smart-cursor-color
