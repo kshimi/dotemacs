@@ -10,3 +10,6 @@
   (set-fontset-font (frame-parameter nil 'font)
 		    'katakana-jisx0201
 		    (cons "Ricty" "iso10646-1"))
+
+(require 'mozc)
+(setq default-input-method "japanese-mozc")
