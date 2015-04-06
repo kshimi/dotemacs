@@ -4,7 +4,9 @@
 (defvar installing-package-list
   '(
     exec-path-from-shell
+    init-loaderq
     helm
+    helm-package
     migemo
     magit
     ace-jump-mode
