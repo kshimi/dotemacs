@@ -15,6 +15,9 @@
 	    #'(lambda ()
 		(define-key eshell-mode-map (kbd "C-c C-l") 'helm-eshell-history)))
 
+  (defadvice helm-buffers-sort-transformer (around ignore activate)
+    (setq ad-return-value (ad-get-arg 0)))
+
   (global-set-key (kbd "M-y") 'helm-show-kill-ring)
   (global-set-key (kbd "C-x b") 'helm-mini)
   (helm-mode 1)
