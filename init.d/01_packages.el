@@ -13,6 +13,9 @@
     ace-jump-mode
     undohist
     mew
+    switch-window
+    persp-mode
+    psession
     smart-cursor-color
     ))
 
