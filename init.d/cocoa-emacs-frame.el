@@ -5,6 +5,3 @@
 
 ;; set input method for mac
 (setq default-input-method "MacOSX"))
-
-(when (package-installed-p 'exec-path-from-shell)
-  (exec-path-from-shell-initialize))
