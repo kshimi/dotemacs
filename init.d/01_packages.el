@@ -20,6 +20,7 @@
     smart-cursor-color
     mew
     open-junk-file
+    visual-regexp
     ))
 
 (let ((not-installed (loop for x in installing-package-list
