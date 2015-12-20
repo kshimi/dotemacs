@@ -1,3 +1,8 @@
+;; set frame size
+(setq initial-frame-alist
+      '((top . 0) (left . 0)
+	(height . 58) (width . 82)))
+
   (set-face-attribute 'default nil
 		      :family "Ricty"
 		      :height 100)
