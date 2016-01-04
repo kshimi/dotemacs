@@ -14,7 +14,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (misterioso)))
  '(org-export-backends (quote (ascii html icalendar latex md)))
- '(safe-local-variable-values (quote ((Coding . iso-2022-7bit) (Coding . utf-8)))))
+ '(safe-local-variable-values (quote ((Coding . iso-2022-7bit) (Coding . utf-8))))
+ '(standard-indent 2))
 
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/init.d/")
