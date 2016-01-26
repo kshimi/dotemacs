@@ -10,8 +10,9 @@
     helm
     helm-package
     helm-swoop
-;    helm-migemo
-;    magit
+    helm-ag
+    magit
+    ace-isearch
     ace-jump-mode
     undohist
     switch-window
