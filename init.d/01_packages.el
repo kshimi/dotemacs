@@ -9,18 +9,18 @@
     migemo
     helm
     helm-package
-;    helm-swoop
-    helm-migemo
+    helm-swoop
+;    helm-migemo
 ;    magit
     ace-jump-mode
     undohist
     switch-window
 ;    persp-mode
 ;    psession
-;    smart-cursor-color
-    mew
+    smart-cursor-color
+;    mew
     open-junk-file
-;    visual-regexp
+    visual-regexp
     ))
 
 (let ((not-installed (loop for x in installing-package-list

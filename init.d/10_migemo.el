@@ -9,6 +9,10 @@
     (setq migemo-command "/usr/bin/cmigemo")
     (setq migemo-dictionary "/usr/share/cmigemo/utf-8/migemo-dict")
     )
+  (when (memq window-system '(w32))
+    (setq migemo-command "c:/Apps/cmigemo-default-win32/cmigemo.exe")
+    (setq migemo-dictionary "c:/Apps/cmigemo-default-win32/dict/utf-8/migemo-dict")
+    )
 
   (setq migemo-options '("-q" "--emacs"))
   (setq migemo-user-dictionary nil)
