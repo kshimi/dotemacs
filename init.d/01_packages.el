@@ -8,6 +8,7 @@
     init-loader
     migemo
     helm
+    helm-descbinds
     helm-package
     helm-swoop
     helm-ag

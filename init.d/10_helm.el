@@ -11,6 +11,9 @@
 	    #'(lambda ()
 		(define-key eshell-mode-map (kbd "C-c C-l") 'helm-eshell-history)))
 
+  (require 'helm-descbinds)
+  (helm-descbinds-mode)
+
   (defadvice helm-buffers-sort-transformer (around ignore activate)
     (setq ad-return-value (ad-get-arg 0)))
 

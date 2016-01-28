@@ -20,7 +20,8 @@
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/init.d/")
 
-(server-start)
+(unless (server-running-p)
+  (server-start))
 
 ;;; init.el ends here
 (custom-set-faces
