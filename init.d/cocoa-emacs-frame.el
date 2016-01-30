@@ -5,3 +5,7 @@
 
 ;; set input method for mac
 (setq default-input-method "MacOSX"))
+
+;; set Command key for Meta
+(when (eq system-type 'darwin)
+  (setq ns-command-modifier (quote meta)))
