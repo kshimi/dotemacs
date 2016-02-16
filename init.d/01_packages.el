@@ -23,6 +23,7 @@
 ;    mew
     open-junk-file
     visual-regexp
+    which-key
     ))
 
 (let ((not-installed (loop for x in installing-package-list
