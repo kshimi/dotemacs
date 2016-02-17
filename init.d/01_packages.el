@@ -19,7 +19,6 @@
     elscreen
     helm-projectile
     projectile-rails
-    smart-cursor-color
     mew
     open-junk-file
     visual-regexp
