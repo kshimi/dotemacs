@@ -16,11 +16,10 @@
     ace-isearch
     ace-jump-mode
     undohist
-    switch-window
-;    persp-mode
-;    psession
+    elscreen
+    helm-projectile
     smart-cursor-color
-;    mew
+    mew
     open-junk-file
     visual-regexp
     which-key
