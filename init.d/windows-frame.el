@@ -3,7 +3,7 @@
   (if (equal system-name "PCS40513")
       (setq initial-frame-alist
 	    '((top . 0) (left . 0)
-	      (height . 57) (width . 88)))
+	      (height . 53) (width . 88)))
     (setq initial-frame-alist
 	  '((top . 0) (left . 610)
 	    (height . 71) (width . 88))))
