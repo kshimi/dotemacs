@@ -19,6 +19,7 @@
     elscreen
     helm-projectile
     projectile-rails
+    ruby-guard
     mew
     open-junk-file
     visual-regexp
