@@ -5,8 +5,8 @@
 	    '((top . 0) (left . 0)
 	      (height . 57) (width . 88)))
     (setq initial-frame-alist
-	  '((top . 0) (left . 700)
-	    (height . 77) (width . 88))))
+	  '((top . 0) (left . 610)
+	    (height . 71) (width . 88))))
 
   (w32-ime-initialize)
   (setq default-input-method "W32-IME")
@@ -14,7 +14,7 @@
   )
 
 (custom-set-faces
- '(default ((t (:family #("ＭＳ ゴシック" 0 7 (charset cp932-2-byte)) :foundry "outline" :slant normal :weight normal :height 90 :width normal))))
+ '(default ((t (:family "MyricaM M" :foundry "outline" :slant normal :weight normal :height 98 :width normal))))
  '(cursor ((t (:background "tomato")))))
 
 (prefer-coding-system 'utf-8)
