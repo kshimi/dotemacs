@@ -8,9 +8,14 @@
 	  '((top . 0) (left . 610)
 	    (height . 71) (width . 88))))
 
-  (w32-ime-initialize)
-  (setq default-input-method "W32-IME")
-  (setq w32-ime-show-mode-line t)
+  (if (functionp 'w32-ime-initialize)
+      (progn
+	(w32-ime-initialize)
+	(setq default-input-method "W32-IME")
+	(setq w32-ime-show-mode-line t))
+    (progn
+      (setq default-input-method "japanese-skk")
+      (setq skk-isearch-start-node 'latin)))
   )
 
 (custom-set-faces
