@@ -4,7 +4,7 @@
 	(height . 99) (width . 240)))
 
 ;; set input method for mac
-(setq default-input-method "MacOSX"))
+(setq default-input-method "MacOSX")
 
 ;; set Command key for Meta
 (when (eq system-type 'darwin)
