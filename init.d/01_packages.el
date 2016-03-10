@@ -3,25 +3,27 @@
 
 (defvar installing-package-list
   '(
-    exec-path-from-shell
-    auto-install
     init-loader
+    auto-install
+    exec-path-from-shell
+    avy
+    avy-zap
     migemo
     helm
     helm-descbinds
     helm-package
     helm-swoop
     helm-ag
+    helm-projectile
     magit
     undohist
     elscreen
-    helm-projectile
     projectile-rails
     ruby-guard
-    mew
     open-junk-file
     visual-regexp
     which-key
+    mew    
     ))
 
 (let ((not-installed (loop for x in installing-package-list
