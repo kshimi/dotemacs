@@ -7,6 +7,7 @@
 ;	      (require 'helm-rb)
 ;	      (require 'helm-rails)
   (require 'helm-eshell)
+  (require 'helm-swoop)
   (add-hook 'eshell-mode-hook
 	    #'(lambda ()
 		(define-key eshell-mode-map (kbd "C-c C-l") 'helm-eshell-history)))
