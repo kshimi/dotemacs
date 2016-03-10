@@ -13,7 +13,6 @@
     helm-swoop
     helm-ag
     magit
-    ace-jump-mode
     undohist
     elscreen
     helm-projectile
