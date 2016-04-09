@@ -1,3 +1,5 @@
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
 (show-paren-mode t)
 (tool-bar-mode -1)
 
