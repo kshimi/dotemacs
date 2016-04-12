@@ -16,7 +16,6 @@
 	(helm-core . "melpa-stable")
 	(helm-descbinds . "melpa-stable")
 	(helm-package . "melpa-stable")
-	(helm-swoop . "melpa-stable")
 	(inf-ruby . "melpa-stable")
 	(inflections . "melpa-stable")
 	(init-loader . "melpa-stable")
