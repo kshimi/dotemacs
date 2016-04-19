@@ -5,8 +5,8 @@
 	    '((top . 0) (left . 0)
 	      (height . 53) (width . 88)))
     (setq initial-frame-alist
-	  '((top . 0) (left . 610)
-	    (height . 71) (width . 88))))
+	  '((top . 0) (left . 835)
+	    (height . 83) (width . 88))))
 
   (if (functionp 'w32-ime-initialize)
       (progn
@@ -23,4 +23,9 @@
  '(cursor ((t (:background "tomato")))))
 
 (prefer-coding-system 'utf-8)
+;;(setq default-process-coding-system '(japanese-cp932-dos . japanese-cp932-dos))
+;;(add-to-list 'process-coding-system-alist '("git" utf-8-dos . utf-8-unix))
+(setq default-process-coding-system '(utf-8-dos . utf-8-dos))
 (setq default-file-name-coding-system 'japanese-cp932-dos)
+
+(setq w32-rwindow-modifier (quote meta))
