@@ -26,6 +26,10 @@
 ;;(setq default-process-coding-system '(japanese-cp932-dos . japanese-cp932-dos))
 ;;(add-to-list 'process-coding-system-alist '("git" utf-8-dos . utf-8-unix))
 (setq default-process-coding-system '(utf-8-dos . utf-8-dos))
+(add-to-list 'process-coding-system-alist
+	     '("ipconfig" japanese-cp932-dos . japanese-cp932-unix)
+	     '("route" japanese-cp932-dos . japanese-cp932-unix)
+	     )
 (setq default-file-name-coding-system 'japanese-cp932-dos)
 
 (setq w32-rwindow-modifier (quote meta))
