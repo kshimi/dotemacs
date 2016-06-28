@@ -3,6 +3,14 @@
 
 (defvar selected-window-minimum-width 83
   "適切な幅")
+(defun wider-window ()
+  "左右分割されたウィンドウのサイズを選択されたウィンドウを大きめにして調整する"
+  (interactive)
+  (balance-windows)
+  (let ((window-min-width  (/ (- (frame-width) selected-window-minimum-width)
+                              (1- (length (window-list nil 'no-minibuf))))))
+    (when (< (window-width) selected-window-minimum-width)
+      (maximize-window))))
 
 (defun balance-windows-horizontally (&optional window-or-frame)
   (interactive)
@@ -51,6 +59,18 @@
         (t                              ;C-uなし
          (other-window 1)
          (balance-windows-and-enlarge-horizontally))))
+
+(defun switch-to-buffer-split-other-window (buf &rest ignore)
+  (interactive "bSwitch to buffer in other window: ")
+  (select-window (split-window-horizontally))
+  (switch-to-buffer buf)
+  (balance-windows-and-enlarge-horizontally))
+(defun find-file-split-other-window (file &rest ignore)
+  (interactive "fFind file in other window: ")
+  (switch-to-buffer-split-other-window (find-file-noselect file)))
+(advice-add 'switch-to-buffer-other-window :override 'switch-to-buffer-split-other-window)
+(advice-add 'find-file-other-window :override 'find-file-split-other-window)
+
 
 (global-set-key (kbd "C-t") 'my-other-window)
 
