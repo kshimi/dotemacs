@@ -23,4 +23,7 @@
     (interactive)
     (org-agenda nil "a"))
   (global-set-key (kbd "<f6>") 'org-agenda-default)
+
+  (global-set-key (kbd "C-c l") 'org-store-link)
   )
+
