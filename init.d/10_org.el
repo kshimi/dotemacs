@@ -4,7 +4,7 @@
   (setq org-directory "~/org/")
   (setq org-capture-templates
 	'(("m" "Memo" entry (file+headline "memo.org" "Memo")
-	   "** %U%?\n%i\n")))
+	   "** %U %a %?\n%i\n")))
   (global-set-key (kbd "C-c c") 'org-capture)
   ;; 時刻の記録をagendaに表示させる
   (setq org-agenda-start-with-log-mode t)
@@ -25,5 +25,14 @@
   (global-set-key (kbd "<f6>") 'org-agenda-default)
 
   (global-set-key (kbd "C-c l") 'org-store-link)
+  
+  (defun org-capture-fill-template--stringify-annotation (&rest ignore)
+    (unless (stringp (org-capture-get :annotation))
+      (plist-put org-capture-plist :annotation (format "%s" (org-capture-get :annotation)))))
+  (advice-add 'org-capture-fill-template :before
+	      'org-capture-fill-template--stringify-annotation)
+  
+  
   )
+
 
