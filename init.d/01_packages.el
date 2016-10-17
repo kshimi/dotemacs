@@ -42,6 +42,7 @@
     avy
     avy-zap
     migemo
+    color-moccur
     helm
     helm-descbinds
     helm-package
