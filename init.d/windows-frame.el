@@ -22,14 +22,7 @@
  '(default ((t (:family "MyricaM M" :foundry "outline" :slant normal :weight normal :height 98 :width normal))))
  '(cursor ((t (:background "tomato")))))
 
-(prefer-coding-system 'utf-8)
-;;(setq default-process-coding-system '(japanese-cp932-dos . japanese-cp932-dos))
-;;(add-to-list 'process-coding-system-alist '("git" utf-8-dos . utf-8-unix))
-(setq default-process-coding-system '(utf-8-dos . utf-8-dos))
-(add-to-list 'process-coding-system-alist
-	     '("ipconfig" japanese-cp932-dos . japanese-cp932-unix)
-	     '("route" japanese-cp932-dos . japanese-cp932-unix)
-	     )
-(setq default-file-name-coding-system 'japanese-cp932-dos)
+(set-default 'buffer-file-coding-system 'utf-8)
+(add-to-list 'process-coding-system-alist '("git" utf-8-dos . utf-8-unix))
 
 (setq w32-rwindow-modifier (quote meta))
