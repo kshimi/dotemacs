@@ -22,7 +22,6 @@
 	(magit . "melpa-stable")
 	(magit-popup . "melpa-stable")
 	(mew . "melpa-stable")
-	(migemo . "melpa-stable")
 	(pkg-info . "melpa-stable")
 	(popup . "melpa-stable")
 	(projectile . "melpa-stable")
