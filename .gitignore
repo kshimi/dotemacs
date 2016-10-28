@@ -1,6 +1,7 @@
 *~
 \#*
 *.elc
+*.cache
 session.*
 .DS_Store
 abbrev_defs
