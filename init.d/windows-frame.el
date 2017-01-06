@@ -19,7 +19,7 @@
   )
 
 (custom-set-faces
- '(default ((t (:family "MyricaM M" :foundry "outline" :slant normal :weight normal :height 98 :width normal))))
+ '(default ((t (:family "Myrica M" :foundry "outline" :slant normal :weight normal :height 98 :width normal))))
  '(cursor ((t (:background "tomato")))))
 
 (set-default 'buffer-file-coding-system 'utf-8)
