@@ -57,8 +57,9 @@
     visual-regexp
     web-mode
     which-key
-    mew
+    expand-region
     smart-mode-line
+    mew
     ))
 
 (let ((not-installed (loop for x in installing-package-list
