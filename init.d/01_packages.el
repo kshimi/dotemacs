@@ -51,10 +51,12 @@
     magit
     undohist
     elscreen
+    auto-complete
     projectile-rails
     ruby-guard
     open-junk-file
     visual-regexp
+    robe
     web-mode
     which-key
     expand-region
