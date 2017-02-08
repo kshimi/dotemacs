@@ -1,11 +1,14 @@
-;; avy
-(when (package-installed-p 'avy)
+;;; Commentary: avy
+;;; Code:
+(use-package avy
+  :bind (
+;	 ("C-:") . avy-goto-char)
+	 ("C-'" . avy-goto-char)
+	 ("M-g f" . avy-goto-line)
+	 ("M-g w" . avy-goto-word-1)
+	 ("M-g e" . avy-goto-word-0))
+  :config
   (avy-setup-default)
-  (require 'avy-zap)
-  (avy-setup-default)
-;  (global-set-key (kbd "C-:") 'avy-goto-char)
-  (global-set-key (kbd "C-'") 'avy-goto-char)
-  (global-set-key (kbd "M-g f") 'avy-goto-line)
-  (global-set-key (kbd "M-g w") 'avy-goto-word-1)
-  (global-set-key (kbd "M-g e") 'avy-goto-word-0)
-  (global-set-key (kbd "M-z") 'avy-zap-to-char))
+  )
+(use-package avy-zap
+  :bind (("M-z" . avy-zap-to-char)))

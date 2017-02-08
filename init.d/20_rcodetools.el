@@ -1,1 +1,1 @@
-(require 'rcodetools)
+(use-package rcodetools)

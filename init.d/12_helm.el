@@ -1,29 +1,28 @@
-;; helm
-(when (package-installed-p 'helm)
-  (require 'helm)
-  (require 'helm-config)
-;	      (require 'helm-files)
-;	      (require 'helm-grep)
-;	      (require 'helm-rb)
-;	      (require 'helm-rails)
-  (require 'helm-eshell)
-  (require 'helm-swoop)
-  (add-hook 'eshell-mode-hook
-	    #'(lambda ()
-		(define-key eshell-mode-map (kbd "C-c C-l") 'helm-eshell-history)))
-
-  (require 'helm-descbinds)
-  (helm-descbinds-mode)
-
+;;; Commentary: helm
+;;; Code:
+(use-package helm
+  :bind (("C-x C-f" . helm-find-files)
+	 ("M-x" . helm-M-x)
+	 ("M-y" . helm-show-kill-ring)
+	 ("C-x b" . helm-mini))
+  :config
+  (helm-mode 1)
   (defadvice helm-buffers-sort-transformer (around ignore activate)
     (setq ad-return-value (ad-get-arg 0)))
-
   (setq helm-ag-base-command "pt --nocolor --nogroup")
-
-  (global-set-key (kbd "C-x C-f") 'helm-find-files)
-  (global-set-key (kbd "M-x") 'helm-M-x)
-  (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-  (global-set-key (kbd "C-x b") 'helm-mini)
-  (helm-mode 1)
   (helm-migemo-mode 1)
   )
+(use-package helm-config)
+;	      (use-package helm-files)
+;	      (use-package helm-grep)
+;	      (use-package helm-rb)
+;	      (use-package helm-rails)
+(use-package helm-eshell
+  :init
+  (bind-keys :map eshell-mode-map
+	     ("C-c C-l" . helm-eshell-history)
+  )
+(use-package helm-swoop)
+(use-package helm-descbinds
+  :config
+  (helm-descbinds-mode))

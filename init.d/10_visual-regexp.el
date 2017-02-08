@@ -1,1 +1,4 @@
-(global-set-key (kbd "M-%") 'vr/query-replace)
+;;; Commentary: visual-regexp
+;;; Code:
+(use-package visual-regexp
+  :bind (("M-%" . vr/query-replace)))
