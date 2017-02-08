@@ -36,6 +36,7 @@
 (defvar installing-package-list
   '(
     init-loader
+    use-package
     auto-install
     exec-path-from-shell
     avy
@@ -56,6 +57,8 @@
     ruby-guard
     open-junk-file
     visual-regexp
+    flycheck
+    flycheck-pos-tip
     robe
     web-mode
     which-key

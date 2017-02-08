@@ -24,5 +24,6 @@
 
 (set-default 'buffer-file-coding-system 'utf-8)
 (add-to-list 'process-coding-system-alist '("git" utf-8-dos . utf-8-unix))
+(add-to-list 'process-coding-system-alist '("rubocop" utf-8-dos . utf-8-unix))
 
 (setq w32-rwindow-modifier (quote meta))
