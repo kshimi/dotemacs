@@ -15,4 +15,6 @@
   (when (package-installed-p 'exec-path-from-shell)
     (exec-path-from-shell-initialize)))
 
+(load-theme 'misterioso)
+
 (setq eww-search-prefix "http://www.google.com/search?q=")
