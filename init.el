@@ -3,26 +3,27 @@
 ;;; Commentary:
 ;;; Code:
 ;(setq debug-on-error t)
+
+;; load proxy setting
+(let ((proxy-setting "~/.emacs.d/emacs-proxy.el"))
+  (if (file-exists-p proxy-setting)
+      (load proxy-setting)))
+
+;; package initialize
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-
 (package-initialize)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (misterioso)))
- '(org-export-backends (quote (ascii html icalendar latex md)))
- '(safe-local-variable-values (quote ((Coding . iso-2022-7bit) (Coding . utf-8))))
- '(standard-indent 2))
-
+;; load init-loader
+(unless (package-installed-p 'init-loader)
+  (package-refresh-contents)
+  (package-install 'init-loader))
 (require 'init-loader)
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/init.d/")
 
+;; start emacs server for emacsclient
 (unless (server-running-p)
   (server-start))
 

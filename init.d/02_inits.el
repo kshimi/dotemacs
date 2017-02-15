@@ -4,6 +4,7 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+(setq-default standard-indent 2)
 (setq-default indent-tabs-mode nil)
 
 (load-library "term/bobcat")
