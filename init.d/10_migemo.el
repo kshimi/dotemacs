@@ -17,7 +17,7 @@
 	  (setq migemo-command "d:/software/cmigemo-default-win32/cmigemo.exe")
 	  (setq migemo-dictionary "D:/software/cmigemo-default-win32/dict/utf-8/migemo-dict"))
       (progn
-	(setq migemo-command "c:/Apps/cmigemo-default-win32/cmigemo.exe")
+	(setq migemo-command "c:/Apps/cmigemo-default-win64/cmigemo.exe")
 	(setq migemo-dictionary "c:/Apps/cmigemo-default-win32/dict/utf-8/migemo-dict")
 	)))
   (setq migemo-options '("-q" "--emacs"))
