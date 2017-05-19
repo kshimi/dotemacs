@@ -6,7 +6,7 @@
 	      (height . 60) (width . 95)))
     (setq initial-frame-alist
 	  '((top . 0) (left . 835)
-	    (height . 83) (width . 88))))
+	    (height . 82) (width . 88))))
 
   (if (functionp 'w32-ime-initialize)
       (progn
