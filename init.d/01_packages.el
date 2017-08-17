@@ -3,7 +3,7 @@
 
 (setq package-pinned-packages
       '(
-	(async . "melpa-stable")
+;	(async . "melpa-stable")
 	(avy . "melpa-stable")
 	(avy-zap . "melpa-stable")
 	(dash . "melpa-stable")
@@ -64,6 +64,7 @@
     which-key
     expand-region
     smart-mode-line
+    editorconfig
     mew
     ))
 
