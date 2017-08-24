@@ -1,5 +1,8 @@
+(setq-default bidi-display-reordering nil)
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
+(setq history-delete-duplicates t)
+(setq set-mark-command-repeat-pop t)
 (show-paren-mode t)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
