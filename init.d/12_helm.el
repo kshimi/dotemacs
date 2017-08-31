@@ -4,7 +4,8 @@
   :bind (("C-x C-f" . helm-find-files)
 	 ("M-x" . helm-M-x)
 	 ("M-y" . helm-show-kill-ring)
-	 ("C-x b" . helm-mini))
+	 ("C-x b" . helm-mini)
+         ("M-g s" . helm-swoop))
   :config
   (helm-mode 1)
   (defadvice helm-buffers-sort-transformer (around ignore activate)
