@@ -10,8 +10,6 @@
   (helm-mode 1)
   (defadvice helm-buffers-sort-transformer (around ignore activate)
     (setq ad-return-value (ad-get-arg 0)))
-  (setq helm-ag-base-command "pt --nocolor --nogroup")
-  (helm-migemo-mode 1)
   )
 (use-package helm-config)
 ;	      (use-package helm-files)
