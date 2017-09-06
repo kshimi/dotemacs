@@ -10,17 +10,17 @@
   (helm-mode 1)
   (defadvice helm-buffers-sort-transformer (around ignore activate)
     (setq ad-return-value (ad-get-arg 0)))
+  (add-hook 'eshell-mode-hook
+            (lambda ()
+              (eshell-cmpl-initialize)
+              (define-key eshell-mode-map [remap eshell-pcomplete] 'helm-esh-pcomplete)
+              (define-key eshell-mode-map (kbd "C-c C-l") 'helm-eshell-history)))
   )
 (use-package helm-config)
 ;	      (use-package helm-files)
 ;	      (use-package helm-grep)
 ;	      (use-package helm-rb)
 ;	      (use-package helm-rails)
-(use-package helm-eshell
-  :init
-  (bind-keys :map eshell-mode-map
-	     ("C-c C-l" . helm-eshell-history)
-  )
 (use-package helm-swoop)
 (use-package helm-descbinds
   :config
