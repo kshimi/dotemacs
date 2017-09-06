@@ -10,6 +10,8 @@
 (setq-default standard-indent 2)
 (setq-default indent-tabs-mode nil)
 
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 (load-library "term/bobcat")
 (when (fboundp 'terminal-init-bobcat) (terminal-init-bobcat))
 (define-key input-decode-map (kbd "<backspace>") (kbd "C-h"))
