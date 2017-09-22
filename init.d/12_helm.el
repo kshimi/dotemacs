@@ -8,6 +8,7 @@
          ("M-g s" . helm-swoop))
   :config
   (helm-mode 1)
+  (helm-migemo-mode 1)
   (defadvice helm-buffers-sort-transformer (around ignore activate)
     (setq ad-return-value (ad-get-arg 0)))
   (add-hook 'eshell-mode-hook
