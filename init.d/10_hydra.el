@@ -5,7 +5,7 @@
   (defhydra hydra-zoom (global-map "<f2>")
     "zoom"
     ("g" text-scale-increase "in")
-    ("l" text-scale-decrese "out"))
+    ("l" text-scale-decrease "out"))
   (defhydra hydra-window (global-map "C-x")
     "window"
     ("o" other-window "other")
