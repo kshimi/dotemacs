@@ -12,7 +12,21 @@
       (progn
 	(w32-ime-initialize)
 	(setq default-input-method "W32-IME")
-	(setq w32-ime-show-mode-line t))
+	(setq w32-ime-show-mode-line t)
+        (w32-ime-initialize)
+        (add-hook 'minibuffer-setup-hook 'deactivate-input-method)
+        (add-hook 'isearch-mode-hook
+                  '(lambda ()
+                     (deactivate-input-method)
+                     (setq w32-ime-composition-window (minibuffer-window))))
+        (add-hook 'isearch-mode-end-hook
+                  '(lambda () (setq w32-ime-composition-window nil)))
+        (advice-add 'helm :around
+                    '(lambda (orig-fun &rest args)
+                       (let ((select-window-functions nil)
+                             (w32-ime-composition-window (minibuffer-window)))
+                         (deactivate-input-method)
+                         (apply orig-fun args)))))
     (progn
       (setq default-input-method "japanese-skk")
       (setq skk-isearch-start-node 'latin)))
