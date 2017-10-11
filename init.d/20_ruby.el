@@ -1,16 +1,19 @@
-(require 'anything-myrurema)
-
-(require 'inf-ruby)
-(setq inf-ruby-default-implementation "pry")
-(setq inf-ruby-eval-binding "Pry.toplevel_binding")
-(add-hook 'inf-ruby-mode-hook 'ansi-color-for-comint-mode-on)
-
-(require 'robe)
-(require 'ac-robe)
-(add-hook 'ruby-mode-hook
-          '(lambda ()
-             (robe-mode)
-             (robe-ac-setup)
-             ))
-
-
+;;; Commentary: robe
+;;; Code:
+(use-package robe
+  :config
+  (add-hook 'inf-ruby-mode-hook 'ansi-color-for-comint-mode-on)
+  (add-hook 'ruby-mode-hook
+            '(lambda ()
+               (robe-mode)
+               (robe-ac-setup)
+               ))
+  (when (memq system-type '(gnu/linux))
+    (setq inf-ruby-default-implementation "pry")
+    (setq inf-ruby-eval-binding "Pry.toplevel_binding"))
+  (use-package 'ac-robe :ensure t)
+  (use-package 'ruby-guard :ensure t)
+  (use-package 'inf-ruby :ensure t)
+  (use-package 'anything-myrurema :ensure t)
+  :ensure t
+  )

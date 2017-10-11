@@ -26,4 +26,5 @@
   (setq migemo-coding-system 'utf-8-unix)
   :config
   (migemo-init)
+  :ensure t
   )

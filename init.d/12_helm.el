@@ -16,13 +16,24 @@
               (eshell-cmpl-initialize)
               (define-key eshell-mode-map [remap eshell-pcomplete] 'helm-esh-pcomplete)
               (define-key eshell-mode-map (kbd "C-c C-l") 'helm-eshell-history)))
-  )
-(use-package helm-config)
+  :init
+  (use-package helm-config
+    :ensure t)
 ;	      (use-package helm-files)
 ;	      (use-package helm-grep)
 ;	      (use-package helm-rb)
 ;	      (use-package helm-rails)
-(use-package helm-swoop)
-(use-package helm-descbinds
-  :config
-  (helm-descbinds-mode))
+  (use-package helm-swoop
+    :ensure t)
+  (use-package helm-descbinds
+    :config
+    (helm-descbinds-mode)
+    :ensure t)
+  (use-package helm-package
+    :ensure t)
+  (use-package helm-ag
+    :ensure t)
+  (use-package helm-projectile
+    :ensure t)
+  :ensure t
+  )

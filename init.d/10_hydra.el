@@ -2,6 +2,8 @@
 ;;; Code:
 (use-package hydra
   :init
+  (org-reload)
+  :config
   (defhydra hydra-zoom (global-map "<f2>")
     "zoom"
     ("g" text-scale-increase "in")
@@ -25,4 +27,5 @@
     ("C-u" outline-up-heading "up")
     ("C-f" org-forward-heading-same-level "forward")
     ("C-b" org-backward-heading-same-level "backward"))
+  :ensure t
   )

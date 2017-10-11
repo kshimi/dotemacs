@@ -16,5 +16,6 @@
     (setq web-mode-block-padding 4)
     )
   (add-hook 'web-mode-hook 'web-mode-hook)
+  :ensure t
   )
 

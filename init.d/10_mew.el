@@ -1,6 +1,7 @@
 ;;; Commentary: mew
 ;;; Code:
 (use-package mew
+  :if (not (memq window-system '(w32)))
   :commands (mew)
   :init
   (setq mew-mail-path "~/Mail")
@@ -12,4 +13,6 @@
 	'mew-user-agent-compose
 	'mew-draft-send-message
 	'mew-draft-kill
-	'mew-send-hook)))
+	'mew-send-hook))
+  :ensure t
+  )

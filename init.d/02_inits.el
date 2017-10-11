@@ -16,10 +16,15 @@
 (when (fboundp 'terminal-init-bobcat) (terminal-init-bobcat))
 (define-key input-decode-map (kbd "<backspace>") (kbd "C-h"))
 
-(unless (eq (window-system) 'w32)
-  (when (package-installed-p 'exec-path-from-shell)
-    (exec-path-from-shell-initialize)))
+(use-package exec-path-from-shell
+  :if (memq window-system '(mac ns))
+  :config
+  (exec-path-from-shell-initialize)
+  :ensure t)
+
+(add-to-list 'load-path "~/.emacs.d/auto-install")
+(add-to-list 'load-path "~/.emacs.d/lib")
 
 (load-theme 'misterioso)
 
-(setq eww-search-prefix "http://www.google.com/search?q=")
+;(setq eww-search-prefix "http://www.google.com/search?q=")

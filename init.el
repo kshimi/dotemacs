@@ -23,8 +23,13 @@
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/init.d/")
 
+;; load use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
 ;; start emacs server for emacsclient
-(unless (server-running-p)
-  (server-start))
+;(unless (server-running-p)
+;  (server-start))
 
 ;;; init.el ends here

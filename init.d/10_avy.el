@@ -9,6 +9,9 @@
 	 ("M-g e" . avy-goto-word-0))
   :config
   (avy-setup-default)
+  (use-package avy-zap
+    :bind (("M-z" . avy-zap-to-char))
+    :ensure t
+    )
+  :ensure t
   )
-(use-package avy-zap
-  :bind (("M-z" . avy-zap-to-char)))
