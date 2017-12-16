@@ -1,8 +1,7 @@
 (use-package auto-complete
+  :ensure t
   :config
   (ac-config-default)
   (global-auto-complete-mode t)
-  (use-package auto-complete-config
-    :ensure t)
-  :ensure t)
+  )
 

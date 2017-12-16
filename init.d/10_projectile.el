@@ -1,11 +1,11 @@
 ;;; Commentary: projectile
 ;;; Code:
 (use-package projectile
+  :ensure t
   :init
   (setq projectile-completion-system 'helm)
   :config
-  (projectile-global-mode)
-  (add-hook 'projectile-mode-hook 'projectile-rails-on)
+  (projectile-mode)
   (use-package helm-projectile
     :init
     (setq helm-ag-base-command "rg --vimgrep --no-heading")
@@ -24,8 +24,9 @@
     :ensure t
     )
   (use-package projectile-rails
-    :ensure t)
+    :ensure t
+    :config
+    (projectile-rails-global-mode))
   (use-package projectile-ripgrep
     :ensure t)
-  :ensure t
   )
