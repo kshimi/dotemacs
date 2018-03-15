@@ -6,7 +6,6 @@
          ("C-M-r" . mc/mark-all-in-region))
   :init
   (global-unset-key "\C-t")
-  :config
   (defhydra hydra-multiple-cursors (global-map "C-t")
     "multiple-cursors"
     ("C-t" mc/mark-next-like-this "next")
