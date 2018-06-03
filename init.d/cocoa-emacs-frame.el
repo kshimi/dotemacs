@@ -1,13 +1,25 @@
 ;; set frame size
 (setq initial-frame-alist
-      '((top . 22) (left . 840)
-	(height . 99) (width . 240)))
+      '((top . 22) (left . 1280)
+	(height . 99) (width . 180)))
+
+(set-face-attribute 'default nil
+		    :family "Ricty"
+		    :height 140)
+(set-fontset-font (frame-parameter nil 'font)
+		  'japanese-jisx0208
+		  (cons "Ricty" "iso10646-1"))
+(set-fontset-font (frame-parameter nil 'font)
+		  'japanese-jisx0212
+		  (cons "Ricty" "iso10646-1"))
+(set-fontset-font (frame-parameter nil 'font)
+		  'katakana-jisx0201
+		  (cons "Ricty" "iso10646-1"))
 
 ;; set input method for mac
 ;;(setq default-input-method "MacOSX")
 (require 'mozc)
 (setq default-input-method "japanese-mozc")
-
 
 ;; set Command key for Meta
 (when (eq system-type 'darwin)
