@@ -28,8 +28,6 @@
     :config
     (helm-descbinds-mode)
     :ensure t)
-  (use-package helm-package
-    :ensure t)
   (use-package helm-ag
     :ensure t)
   (use-package helm-projectile
