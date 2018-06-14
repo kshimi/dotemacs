@@ -12,6 +12,7 @@
     (setq mozc-candidate-style 'popup)
 
     ;; cursor-color-settings
+    (require 'mozc-cursor-color)
     (setq mozc-cursor-color-alist '((direct        . "red")
                                     (read-only     . "yellow")
                                     (hiragana      . "green")
