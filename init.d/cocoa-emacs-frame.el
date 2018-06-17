@@ -1,11 +1,12 @@
 ;; set frame size
 (setq initial-frame-alist
-      '((top . 22) (left . 1280)
-	(height . 99) (width . 180)))
+      '((top . 22) (left . 1181)
+	(height . 73) (width . 151)
+        (alpha . (93 . 80))))
 
 (set-face-attribute 'default nil
 		    :family "Ricty"
-		    :height 140)
+		    :height 180)
 (set-fontset-font (frame-parameter nil 'font)
 		  'japanese-jisx0208
 		  (cons "Ricty" "iso10646-1"))
