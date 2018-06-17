@@ -8,8 +8,7 @@
 	 ("C-x b" . helm-mini)
          ("M-g s" . helm-swoop))
   :config
-  (helm-mode 1)
-  (helm-migemo-mode 1)
+  (require 'helm-config)
   (defadvice helm-buffers-sort-transformer (around ignore activate)
     (setq ad-return-value (ad-get-arg 0)))
   (add-hook 'eshell-mode-hook
@@ -17,6 +16,8 @@
               (eshell-cmpl-initialize)
               (define-key eshell-mode-map [remap eshell-pcomplete] 'helm-esh-pcomplete)
               (define-key eshell-mode-map (kbd "C-c C-l") 'helm-eshell-history)))
+  (helm-mode 1)
+  (helm-migemo-mode 1)
   :init
 ;	      (use-package helm-files)
 ;	      (use-package helm-grep)
@@ -27,8 +28,6 @@
   (use-package helm-descbinds
     :config
     (helm-descbinds-mode)
-    :ensure t)
-  (use-package helm-package
     :ensure t)
   (use-package helm-ag
     :ensure t)

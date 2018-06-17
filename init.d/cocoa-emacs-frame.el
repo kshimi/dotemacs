@@ -16,11 +16,6 @@
 		  'katakana-jisx0201
 		  (cons "Ricty" "iso10646-1"))
 
-;; set input method for mac
-;;(setq default-input-method "MacOSX")
-(require 'mozc)
-(setq default-input-method "japanese-mozc")
-
 ;; set Command key for Meta
 (when (eq system-type 'darwin)
   (setq ns-command-modifier (quote meta)))

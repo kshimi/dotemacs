@@ -25,6 +25,7 @@
 (add-to-list 'load-path "~/.emacs.d/auto-install")
 (add-to-list 'load-path "~/.emacs.d/lib")
 
-(load-theme 'misterioso)
+;;(load-theme 'misterioso)
+(load-library "iceberg-emacs/iceberg-theme")
 
 ;(setq eww-search-prefix "http://www.google.com/search?q=")
