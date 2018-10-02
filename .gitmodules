@@ -1,0 +1,3 @@
+[submodule "lib/iceberg-emacs"]
+	path = lib/iceberg-emacs
+	url = https://github.com/apnsngr/iceberg-emacs.git
