@@ -1,3 +1,6 @@
 [submodule "lib/iceberg-emacs"]
 	path = lib/iceberg-emacs
 	url = https://github.com/apnsngr/iceberg-emacs.git
+[submodule "lib/mozc-el-extensions"]
+	path = lib/mozc-el-extensions
+	url = https://github.com/iRi-E/mozc-el-extensions.git
