@@ -2,6 +2,6 @@
 (setq auto-mode-alist (append '(("\\.\\(frm\\|bas\\|cls\\|vb\\)$" .
 				 vbnet-mode)) auto-mode-alist))
 (custom-set-faces
- '(vbnet-funcall-face ((t (:foreground "cyan"))))
+ '(vbnet-funcall-face ((t (:foreground "light sky blue"))))
  '(vbnet-namespace-face ((t (:foreground "dark orange")))))
 
