@@ -2,6 +2,8 @@
 -/elpa
 -/eshell
 -/server
+-/image-dired
+-/url
 -abbrev_defs
 -recentf
 -projectile*
