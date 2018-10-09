@@ -4,3 +4,6 @@
 [submodule "lib/mozc-el-extensions"]
 	path = lib/mozc-el-extensions
 	url = https://github.com/iRi-E/mozc-el-extensions.git
+[submodule "lib/mermaid-mode"]
+	path = lib/mermaid-mode
+	url = https://github.com/shen390s/mermaid-mode.git
