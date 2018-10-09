@@ -15,6 +15,12 @@
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
+;; load use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'bind-key)
+  (package-install 'use-package))
+
 ;; load init-loader
 (unless (package-installed-p 'init-loader)
   (package-refresh-contents)
@@ -22,11 +28,6 @@
 (require 'init-loader)
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/init.d/")
-
-;; load use-package
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
 
 ;; start emacs server for emacsclient
 ;(unless (server-running-p)
