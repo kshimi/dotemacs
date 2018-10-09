@@ -6,6 +6,7 @@
 (show-paren-mode t)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(global-hl-line-mode 1)
 
 (setq-default standard-indent 2)
 (setq-default indent-tabs-mode nil)
