@@ -12,8 +12,8 @@
 ;; package initialize
 (require 'package)
 (setq protocol (if (eq (window-system) 'w32) "http://" "https://"))
-(add-to-list 'package-archives '("melpa" . (concat protocol "melpa.org/packages/")) t)
-(add-to-list 'package-archives '("melpa-stable" . (concat protocol "stable.melpa.org/packages/")) t)
+(add-to-list 'package-archives (cons "melpa" (concat protocol "melpa.org/packages/")) t)
+(add-to-list 'package-archives (cons "melpa-stable" (concat protocol "stable.melpa.org/packages/")) t)
 (package-initialize)
 
 ;; load use-package
