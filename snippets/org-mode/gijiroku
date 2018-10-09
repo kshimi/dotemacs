@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: gijiroku
+# key: giji
+# --
+* `(format-time-string "%Y%m%d" (current-time))` ${1:title}
+
+** 場所
+${2:place}
+
+** 参加者
+${3:user}\)
+AECS\) ${4:member}、清水
+
+** $0

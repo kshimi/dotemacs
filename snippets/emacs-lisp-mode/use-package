@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: use-package
+# key: use
+# --
+;;; Commentary: ${1:name}
+;;; Code:
+(use-package $1
+  :commands $0
+  :binds
+  :init
+  :config
+  :ensure t
+  )
