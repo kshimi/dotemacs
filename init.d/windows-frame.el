@@ -6,10 +6,7 @@
     (setq initial-frame-alist
 	  '((top . 0) (left . 835)
 	    (height . 82) (width . 88)))))
-
-(custom-set-faces
- '(default ((t (:family "Myrica M" :foundry "outline" :slant normal :weight normal :height 113 :width normal))))
- '(cursor ((t (:background "tomato")))))
+(set-face-attribute 'default nil :family "Myrica M" :height 113)
 
 (set-default 'buffer-file-coding-system 'utf-8)
 (set-default 'default-process-coding-system '(utf-8-dos . cp932))
@@ -25,4 +22,3 @@
 (add-to-list 'process-coding-system-alist '("nslookup" cp932 . cp932))
 
 (setq w32-rwindow-modifier (quote meta))
-

@@ -28,10 +28,10 @@
 
 ;;(load-theme 'misterioso)
 (load-library "iceberg-emacs/iceberg-theme")
-(custom-set-faces
- '(hl-line ((t (:background "#272c42")))))
+(set-face-attribute 'hl-line nil :background "#272c42")
+(set-face-attribute 'cursor nil :background "tomato")
 
-(when (not (eq (window-system) 'w32))
+(unless (eq (window-system) 'w32)
   (setq browse-url-browser-function 'eww-browse-url)
   (setq eww-search-prefix "http://www.google.com/search?q=")
   )

@@ -7,6 +7,8 @@ session.*
 abbrev_defs
 bookmarks
 tramp
+/emacs-proxy.el
+/custom.el
 /init.d/archive
 /recentf
 /undohist
@@ -19,6 +21,5 @@ tramp
 /var
 /auto-save-list
 /server
-emacs-proxy.el
 /image-dired/
 

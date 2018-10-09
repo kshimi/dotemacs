@@ -11,9 +11,12 @@
 
 ;; package initialize
 (require 'package)
-(setq protocol (if (eq (window-system) 'w32) "http://" "https://"))
-(add-to-list 'package-archives (cons "melpa" (concat protocol "melpa.org/packages/")) t)
-(add-to-list 'package-archives (cons "melpa-stable" (concat protocol "stable.melpa.org/packages/")) t)
+(let ((protocol (if (eq (window-system) 'w32) "http://" "https://")))
+  (add-to-list 'package-archives (cons "melpa" (concat protocol "melpa.org/packages/")) t)
+  (add-to-list 'package-archives (cons "melpa-stable" (concat protocol "stable.melpa.org/packages/")) t))
+(setq custom-file (locate-user-emacs-file "custom.el"))
+(when (file-exists-p custom-file)
+  (load custom-file))
 (package-initialize)
 
 ;; load use-package
