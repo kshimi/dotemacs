@@ -28,4 +28,12 @@
 ;;(load-theme 'misterioso)
 (load-library "iceberg-emacs/iceberg-theme")
 
-;(setq eww-search-prefix "http://www.google.com/search?q=")
+(when (not (eq (window-system) 'w32))
+  (setq browse-url-browser-function 'eww-browse-url)
+  (setq eww-search-prefix "http://www.google.com/search?q=")
+  )
+
+;;Correspond to Imagemagick7
+(when (eq (window-system) 'w32)
+  (setq image-dired-cmd-create-thumbnail-program "magick")
+  )

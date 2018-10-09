@@ -1,4 +1,5 @@
 (use-package flycheck
+  :if (not (memq window-system '(w32)))
   :init
   (use-package flycheck-pos-tip
     :ensure t)

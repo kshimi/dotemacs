@@ -17,6 +17,12 @@
 (add-to-list 'process-coding-system-alist '("Git.Exe" utf-8-dos . utf-8-unix))
 (add-to-list 'process-coding-system-alist '("git.EXE" utf-8-dos . utf-8-unix))
 (add-to-list 'process-coding-system-alist '("rubocop" utf-8-dos . utf-8-unix))
+(add-to-list 'process-coding-system-alist '("ipconfig" cp932 . cp932))
+(add-to-list 'process-coding-system-alist '("tracert" cp932 . cp932))
+(add-to-list 'process-coding-system-alist '("ping" cp932 . cp932))
+(add-to-list 'process-coding-system-alist '("netstat" cp932 . cp932))
+(add-to-list 'process-coding-system-alist '("arp" cp932 . cp932))
+(add-to-list 'process-coding-system-alist '("nslookup" cp932 . cp932))
 
 (setq w32-rwindow-modifier (quote meta))
 

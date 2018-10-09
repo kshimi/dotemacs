@@ -1,6 +1,7 @@
 ;;; Commentary: robe
 ;;; Code:
 (use-package robe
+  :if (not (memq window-system '(w32)))
   :config
   (add-hook 'inf-ruby-mode-hook 'ansi-color-for-comint-mode-on)
   (add-hook 'ruby-mode-hook
