@@ -28,6 +28,8 @@
 
 ;;(load-theme 'misterioso)
 (load-library "iceberg-emacs/iceberg-theme")
+(custom-set-faces
+ '(hl-line ((t (:background "#272c42")))))
 
 (when (not (eq (window-system) 'w32))
   (setq browse-url-browser-function 'eww-browse-url)
