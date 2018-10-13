@@ -7,3 +7,6 @@
 [submodule "lib/mermaid-mode"]
 	path = lib/mermaid-mode
 	url = https://github.com/shen390s/mermaid-mode.git
+[submodule "lib/vbnet-mode"]
+	path = lib/vbnet-mode
+	url = https://github.com/emacsmirror/vbnet-mode.git
