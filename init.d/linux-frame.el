@@ -2,7 +2,7 @@
 (setq initial-frame-alist
       '((top . 0) (left . 0)
 	(height . 58) (width . 82)
-        (alpha . (85 . 50))))
+        (alpha . (95 . 85))))
 
 (set-face-attribute 'default nil
 		    :family "Ricty"
