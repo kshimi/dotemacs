@@ -19,10 +19,6 @@
   (helm-mode 1)
   (helm-migemo-mode 1)
   :init
-;	      (use-package helm-files)
-;	      (use-package helm-grep)
-;	      (use-package helm-rb)
-;	      (use-package helm-rails)
   (use-package helm-swoop
     :ensure t)
   (use-package helm-descbinds
