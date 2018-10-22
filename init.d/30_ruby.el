@@ -1,6 +1,7 @@
 ;;; Commentary: robe
 ;;; Code:
 (use-package robe
+  :ensure t
   :config
   (add-hook 'inf-ruby-mode-hook 'ansi-color-for-comint-mode-on)
   (add-hook 'ruby-mode-hook
@@ -19,7 +20,7 @@
       '(add-to-list 'ac-modes 'inf-ruby-mode))
     (add-hook 'inf-ruby-mode-hook 'ac-inf-ruby-enable)
     )
+  (use-package helm-rdefs :ensure t)
 ;;  (use-package ruby-guard :ensure t)
 ;;  (use-package anything-myrurema :ensure t)
-  :ensure t
   )

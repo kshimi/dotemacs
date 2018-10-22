@@ -2,8 +2,7 @@
 ;;; Code:
 (use-package avy
   :bind (
-;	 ("C-:") . avy-goto-char)
-	 ("C-'" . avy-goto-char)
+	 ("M-g c" . avy-goto-char)
 	 ("M-g f" . avy-goto-line)
 	 ("M-g w" . avy-goto-word-1)
 	 ("M-g e" . avy-goto-word-0))
