@@ -2,6 +2,7 @@
   :config
   (add-hook 'ruby-mode-hook 'helm-gtags-mode)
   (add-hook 'c-mode-common-hook 'helm-gtags-mode)
+  (add-hook 'emacs-lisp-mode-hook 'helm-gtags-mode)
   (with-eval-after-load 'helm-gtags
     (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
     (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
