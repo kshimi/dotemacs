@@ -11,6 +11,7 @@
                ))
   (setq inf-ruby-default-implementation "pry")
   (setq inf-ruby-eval-binding "Pry.toplevel_binding")
+  (setq ruby-insert-encoding-magic-comment nil)
   (use-package ac-robe)
   (use-package inf-ruby :ensure t)
   (use-package ac-inf-ruby
