@@ -30,6 +30,7 @@
 (load-library "iceberg-emacs/iceberg-theme")
 (set-face-attribute 'hl-line nil :background "#272c42")
 (set-face-attribute 'cursor nil :background "tomato")
+(set-face-attribute 'region nil :background "#493E54" :underline "peach puff")
 
 (unless (eq (window-system) 'w32)
   (setq browse-url-browser-function 'eww-browse-url)
