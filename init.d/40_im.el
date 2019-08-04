@@ -46,34 +46,6 @@
                 :after (lambda (&rest args)
                          (deactivate-input-method)))
 
-    ;; helm でミニバッファの入力時に IME の状態を継承しない
-    (setq helm-inherit-input-method nil)
-
-    ;; helm の検索パターンを mozc を使って入力した場合にエラーが発生することがあるのを改善する
-    (advice-add 'mozc-helper-process-recv-response
-                :around (lambda (orig-fun &rest args)
-                          (cl-loop for return-value = (apply orig-fun args)
-                                   if return-value return it)))
-
-    ;; helm の検索パターンを mozc を使って入力する場合、入力中は helm の候補の更新を停止する
-    (advice-add 'mozc-candidate-dispatch
-                :before (lambda (&rest args)
-                          (when helm-alive-p
-                            (cl-case (nth 0 args)
-                              ('update
-                               (unless helm-suspend-update-flag
-                                 (helm-kill-async-processes)
-                                 (setq helm-pattern "")
-                                 (setq helm-suspend-update-flag t)))
-                              ('clean-up
-                               (when helm-suspend-update-flag
-                                 (setq helm-suspend-update-flag nil)))))))
-
-    ;; helm で候補のアクションを表示する際に IME を OFF にする
-    (advice-add 'helm-select-action
-                :before (lambda (&rest args)
-                          (deactivate-input-method)))
-
     (when (eq (window-system) 'w32)
       ;; IME が ON の時、カーソルの移動が遅くなるのを改善する
       (setq w32-pipe-read-delay 10)
@@ -100,12 +72,7 @@
                  (setq w32-ime-composition-window (minibuffer-window))))
     (add-hook 'isearch-mode-end-hook
               '(lambda () (setq w32-ime-composition-window nil)))
-    (advice-add 'helm :around
-                '(lambda (orig-fun &rest args)
-                   (let ((select-window-functions nil)
-                         (w32-ime-composition-window (minibuffer-window)))
-                     (deactivate-input-method)
-                     (apply orig-fun args))))))
+    ))
 
  (progn
    (setq default-input-method "japanese-skk")
