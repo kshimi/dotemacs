@@ -1,12 +1,8 @@
 (when (eq (window-system) 'w32)
-  (if (equal system-name "PCS70830")
-      (setq initial-frame-alist
-	    '((top . 0) (left . 0)
-	      (height . 60) (width . 95)))
-    (setq initial-frame-alist
-	  '((top . 0) (left . 835)
-	    (height . 82) (width . 88)))))
-(set-face-attribute 'default nil :family "Myrica M" :height 113)
+  (setq initial-frame-alist
+        '((top . 0) (left . 0)
+          (height . 65) (width . 95))))
+(set-face-attribute 'default nil :family "Myrica M" :height 120)
 
 (set-default 'buffer-file-coding-system 'utf-8)
 (set-default 'default-process-coding-system '(utf-8-dos . cp932))
