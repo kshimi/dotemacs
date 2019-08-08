@@ -2,6 +2,7 @@
 ;;; Code:
 (use-package magit
   :config
+  (setq vc-handled-backends nil)
   (when (eq (window-system) 'w32)
     (setenv "GIT_ASKPASS" "git-gui--askpass")
     (add-hook 'git-commit-mode-hook

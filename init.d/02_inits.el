@@ -7,6 +7,8 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (global-hl-line-mode 1)
+(prefer-coding-system 'utf-8)
+(setq inhibit-compacting-font-caches t)
 
 (setq-default standard-indent 2)
 (setq-default indent-tabs-mode nil)
