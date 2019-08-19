@@ -6,6 +6,7 @@
 (show-paren-mode t)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(menu-bar-mode -1)
 (global-hl-line-mode 1)
 (prefer-coding-system 'utf-8)
 (setq inhibit-compacting-font-caches t)
@@ -33,6 +34,9 @@
 (set-face-attribute 'hl-line nil :background "#272c42")
 (set-face-attribute 'cursor nil :background "tomato")
 (set-face-attribute 'region nil :background "#493E54" :underline "peach puff")
+
+(when (window-system)
+  (setq frame-title-format '(:eval (if (buffer-file-name) " %f" " %b"))))
 
 (unless (eq (window-system) 'w32)
   (setq browse-url-browser-function 'eww-browse-url)
