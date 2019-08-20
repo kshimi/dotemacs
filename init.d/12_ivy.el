@@ -16,5 +16,5 @@
     )
   (use-package swiper
     :ensure t
-    :bind (("M-g s" . swiper)))
+    :bind (("C-s" . swiper)))
   )
