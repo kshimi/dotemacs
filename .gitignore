@@ -4,12 +4,16 @@
 *.cache
 session.*
 .DS_Store
+.lsp-session*
+.mc-lists.el
 abbrev_defs
 bookmarks
 tramp
+kkcrc
 /emacs-proxy.el
 /custom.el
 /init.d/archive
+/transient
 /recentf
 /undohist
 /projectile-bookmarks.eld
