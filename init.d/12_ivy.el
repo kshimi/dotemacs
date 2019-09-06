@@ -11,10 +11,12 @@
     :config
     (counsel-mode 1)
     :bind (("C-x C-b" . counsel-ibuffer)
-           ("C-c C-r" . ivy-resume)
-           )
-    )
+           ("C-c C-r" . ivy-resume)))
   (use-package swiper
     :ensure t
     :bind (("C-s" . swiper)))
+  (use-package ivy-rich
+    :ensure t
+    :config
+    (ivy-rich-mode 1))
   )
