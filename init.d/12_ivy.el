@@ -10,8 +10,7 @@
     :ensure t
     :config
     (counsel-mode 1)
-    :bind (("C-x C-b" . counsel-ibuffer)
-           ("C-c C-r" . ivy-resume)))
+    :bind (("C-c C-r" . ivy-resume)))
   (use-package swiper
     :ensure t
     :bind (("C-s" . swiper)))
