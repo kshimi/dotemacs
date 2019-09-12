@@ -5,14 +5,18 @@
   :hook
   (python-mode . lsp)
   (ruby-mode . lsp)
-  :init
-  (setq lsp-enable-indentation nil)
-  (setq lsp-enable-snippet nil)
-  (setq lsp-enable-on-type-formatting nil)
   :custom
+  (lsp-enable-indentation nil)
+  (lsp-enable-snippet nil)
+  (lsp-enable-on-type-formatting nil)
   (lsp-prefer-flymake :none)
   :commands lsp)
-(use-package lsp-ui :ensure t :commands lsp-ui-mode)
+(use-package lsp-ui
+  :ensure t
+  :custom
+  (lsp-ui-doc-position 'bottom)
+  (lsp-ui-doc-max-height 10)
+  :commands lsp-ui-mode)
 (use-package company-lsp
   :ensure t
   :commands company-lsp
