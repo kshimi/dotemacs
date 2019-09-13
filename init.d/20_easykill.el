@@ -1,8 +1,6 @@
 ;;; Commentary: easy-kill
 ;;; Code:
-(use-package easy-kill
-  :ensure t
-  :config
-  (global-set-key [remap kill-ring-save] 'easy-kill)
-  (global-set-key [remap mark-sexp] 'easy-mark)
-  )
+(use-package easy-kill :ensure t
+  :bind
+  ([remap kill-ring-save] . easy-kill)
+  ([remap mark-sexp] . easy-mark))

@@ -1,10 +1,7 @@
 ;;; Commentary: elscreen
 ;;; Code:
-(use-package elscreen
-  :init
-  (setq elscreen-tab-display-kill-screen nil)
-  (setq elscreen-tab-display-control nil)
-  :config
-  (elscreen-start)
-  :ensure t
-  )
+(use-package elscreen :ensure t
+  :custom
+  (elscreen-tab-display-kill-screen nil)
+  (elscreen-tab-display-control nil)
+  :config (elscreen-start))

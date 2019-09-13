@@ -1,9 +1,9 @@
 ;;; Commentary: multiple-cursors
 ;;; Code:
-(use-package multiple-cursors
-  :ensure t
-  :bind (("C-M-c" . mc/edit-lines)
-         ("C-M-r" . mc/mark-all-in-region))
+(use-package multiple-cursors :ensure t
+  :bind
+  ("C-M-c" . mc/edit-lines)
+  ("C-M-r" . mc/mark-all-in-region)
   :init
   (global-unset-key "\C-t")
   (defhydra hydra-multiple-cursors (global-map "C-t")

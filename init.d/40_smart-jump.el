@@ -1,7 +1,6 @@
 ;;; Commentary: smart-jump
 ;;; Code:
-(use-package smart-jump
-  :ensure t
+(use-package smart-jump :ensure t
   :config
   (smart-jump-register
    :modes 'lsp-ui-mode
@@ -9,4 +8,3 @@
    :pop-fn nil
    :refs-fn 'lsp-ui-peek-find-references
    :heuristic 'error))
-

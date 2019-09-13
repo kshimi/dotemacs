@@ -1,7 +1,4 @@
 ;;; Commentary: editorconfig
 ;;; Code:
-(use-package editorconfig
-  :config
-  (editorconfig-mode 1)
-  :ensure t
-  )
+(use-package editorconfig :ensure t
+  :config (editorconfig-mode 1))

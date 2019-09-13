@@ -1,6 +1,4 @@
 ;;; Commentary: visual-regexp
 ;;; Code:
-(use-package visual-regexp
-  :bind (("M-%" . vr/query-replace))
-  :ensure t
-  )
+(use-package visual-regexp :ensure t
+  :bind (("M-%" . vr/query-replace)))

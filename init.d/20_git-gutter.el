@@ -1,7 +1,4 @@
 ;;; Commentary: git-gutter+
 ;;; Code:
-(use-package git-gutter+
-  :config
-  (global-git-gutter+-mode)
-  :ensure t
-  )
+(use-package git-gutter+ :ensure t
+  :config (global-git-gutter+-mode))

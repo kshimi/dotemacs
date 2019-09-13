@@ -1,9 +1,7 @@
 ;;; Commentary: company
 ;;; Code:
-(use-package company
-  :ensure t
+(use-package company :ensure t
   :config
-  (add-hook 'after-init-hook 'global-company-mode)
   (set-face-attribute 'company-tooltip nil
                       :foreground "black" :background "lightgrey")
   (set-face-attribute 'company-tooltip-common nil
@@ -18,6 +16,8 @@
                       :background "orange")
   (set-face-attribute 'company-scrollbar-bg nil
                       :background "gray40")
-  :init
-  (use-package company-quickhelp :ensure t :config (company-quickhelp-mode +1))
+  :hook (after-init . global-company-mode)
   )
+
+(use-package company-quickhelp :ensure t
+  :config (company-quickhelp-mode +1))

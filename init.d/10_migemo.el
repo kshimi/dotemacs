@@ -1,6 +1,6 @@
 ;;; Commentary: migemo
 ;;; Code:
-(use-package migemo
+(use-package migemo :ensure t
   :init
   (when (memq window-system '(ns))
     (setq migemo-command "/usr/local/bin/cmigemo")
@@ -16,11 +16,9 @@
       (setq migemo-command "c:/Apps/cmigemo-default-win64/cmigemo.exe")
       (setq migemo-dictionary "c:/Apps/cmigemo-default-win64/dict/utf-8/migemo-dict")
       ))
-  (setq migemo-options '("-q" "--emacs"))
-  (setq migemo-user-dictionary nil)
-  (setq migemo-regex-dictionary nil)
-  (setq migemo-coding-system 'utf-8-unix)
-  :config
-  (migemo-init)
-  :ensure t
-  )
+  :custom
+  (migemo-options '("-q" "--emacs"))
+  (migemo-user-dictionary nil)
+  (migemo-regex-dictionary nil)
+  (migemo-coding-system 'utf-8-unix)
+  :config (migemo-init))

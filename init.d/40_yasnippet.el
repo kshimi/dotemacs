@@ -1,8 +1,5 @@
 ;;; Commentary: yasnippet
 ;;; Code
-(use-package yasnippet
-  :ensure t
+(use-package yasnippet :ensure t
   :ensure yasnippet-snippets
-  :config
-  (yas-global-mode 1)
-  )
+  :config (yas-global-mode 1))

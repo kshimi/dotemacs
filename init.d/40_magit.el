@@ -1,6 +1,7 @@
 ;;; Commentary: magit
 ;;; Code:
-(use-package magit
+(use-package magit :ensure t
+  :pin melpa
   :config
   (setq vc-handled-backends nil)
   (when (eq (window-system) 'w32)
@@ -10,5 +11,4 @@
                  (set-buffer-file-coding-system 'utf-8))))
   (global-magit-file-mode t)
   (add-hook 'eshell-mode-hook 'magit-file-mode)
-  :ensure t
   )

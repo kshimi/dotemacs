@@ -1,7 +1,5 @@
 ;;; Commentary: flymake settings
 ;;; Code:
-(use-package flymake-diagnostic-at-point
+(use-package flymake-diagnostic-at-point :ensure t
   :if (memq window-system '(w32))
-  :ensure t
-  :hook
-  (flymake-mode . flymake-diagnostic-at-point-mode))
+  :hook (flymake-mode . flymake-diagnostic-at-point-mode))

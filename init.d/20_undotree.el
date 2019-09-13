@@ -1,7 +1,4 @@
 ;;; Commentary: undo-tree
 ;;; Code:
-(use-package undo-tree
-  :config
-  (global-undo-tree-mode t)
-  :ensure t
-  )
+(use-package undo-tree :ensure t
+  :config (global-undo-tree-mode t))
