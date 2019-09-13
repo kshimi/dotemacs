@@ -11,6 +11,7 @@
   (lsp-prefer-flymake :none)
   :commands lsp)
 (use-package lsp-ui :ensure t
+  :bind (:map lsp-ui-mode-map ([remap imenu] . lsp-ui-imenu))
   :custom
   (lsp-ui-doc-position 'bottom)
   (lsp-ui-doc-max-height 10)
