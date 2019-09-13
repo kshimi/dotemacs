@@ -13,7 +13,12 @@
     :bind (("C-c C-r" . ivy-resume)))
   (use-package swiper
     :ensure t
-    :bind (("C-s" . swiper)))
+    :init
+    (defun isearch-forward-or-swiper (use-swiper)
+      (interactive "P")
+      (let (current-prefix-arg)
+        (call-interactively (if use-swiper 'swiper 'isearch-forward))))
+    :bind (("C-s" . isearch-forward-or-swiper)))
   (use-package ivy-rich
     :ensure t
     :config
