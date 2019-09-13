@@ -46,17 +46,21 @@
                 :after (lambda (&rest args)
                          (deactivate-input-method)))
 
-    (when (eq (window-system) 'w32)
-      ;; IME が ON の時、カーソルの移動が遅くなるのを改善する
-      (setq w32-pipe-read-delay 10)
-
-      ;; Windows の mozc では、セッション接続直後 directモード になるので hiraganaモード にする
+    ;; Windows の mozc では、セッション接続直後 directモード になるので hiraganaモード にする
+    (when (or
+           (eq (window-system) 'w32)
+           (and
+            (eq system-type 'gnu/linux)
+            (string-match-p "Microsoft" (shell-command-to-string "uname -v"))))
       (advice-add 'mozc-session-execute-command
                   :after (lambda (&rest args)
                            (when (eq (nth 0 args) 'CreateSession)
                              ;; (mozc-session-sendkey '(hiragana)))))
-                             (mozc-session-sendkey '(Hankaku/Zenkaku)))))
-      )
+                             (mozc-session-sendkey '(Hankaku/Zenkaku))))))
+
+    (when (eq (window-system) 'w32)
+      ;; IME が ON の時、カーソルの移動が遅くなるのを改善する
+      (setq w32-pipe-read-delay 10))
     ))
 
  ((functionp 'w32-ime-initialize)
