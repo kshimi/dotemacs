@@ -48,9 +48,9 @@
 
     ;; Windows の mozc では、セッション接続直後 directモード になるので hiraganaモード にする
     (when (or
-           (eq (window-system) 'w32)
+           (memq system-type '(windows-nt))
            (and
-            (eq system-type 'gnu/linux)
+            (memq system-type '(gnu/linux))
             (string-match-p "Microsoft" (shell-command-to-string "uname -v"))))
       (advice-add 'mozc-session-execute-command
                   :after (lambda (&rest args)
@@ -58,7 +58,7 @@
                              ;; (mozc-session-sendkey '(hiragana)))))
                              (mozc-session-sendkey '(Hankaku/Zenkaku))))))
 
-    (when (eq (window-system) 'w32)
+    (when (memq system-type '(windows-nt))
       ;; IME が ON の時、カーソルの移動が遅くなるのを改善する
       (setq w32-pipe-read-delay 10))
     ))

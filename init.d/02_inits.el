@@ -21,7 +21,7 @@
 (define-key input-decode-map (kbd "<backspace>") (kbd "C-h"))
 
 (use-package exec-path-from-shell
-  :if (memq window-system '(mac ns))
+  :if (memq system-type '(darwin))
   :config
   (exec-path-from-shell-initialize)
   :ensure t)
@@ -38,12 +38,12 @@
 (when (window-system)
   (setq frame-title-format '(:eval (if (buffer-file-name) " %f" " %b"))))
 
-(unless (eq (window-system) 'w32)
+(unless (memq system-type '(windows-nt))
   (setq browse-url-browser-function 'eww-browse-url)
   (setq eww-search-prefix "http://www.google.com/search?q=")
   )
 
 ;;Correspond to Imagemagick7
-(when (eq (window-system) 'w32)
+(when (memq system-type '(windows-nt))
   (setq image-dired-cmd-create-thumbnail-program "magick")
   )

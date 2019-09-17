@@ -1,2 +1,2 @@
 (use-package rcodetools
-  :if (not (memq window-system '(w32))))
+  :if (not (memq system-type '(windows-nt))))

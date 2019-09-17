@@ -4,7 +4,7 @@
   :pin melpa
   :config
   (setq vc-handled-backends nil)
-  (when (eq (window-system) 'w32)
+  (when (memq system-type '(windows-nt))
     (setenv "GIT_ASKPASS" "git-gui--askpass")
     (add-hook 'git-commit-mode-hook
               '(lambda ()

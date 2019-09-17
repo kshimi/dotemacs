@@ -2,7 +2,7 @@
 ;;; Code:
 (use-package migemo :ensure t
   :init
-  (when (memq window-system '(ns))
+  (when (memq system-type '(darwin))
     (setq migemo-command "/usr/local/bin/cmigemo")
     (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
     )
@@ -11,7 +11,7 @@
     (setq migemo-command "/usr/bin/cmigemo")
     (setq migemo-dictionary "/usr/share/cmigemo/utf-8/migemo-dict")
     )
-  (when (memq window-system '(w32))
+  (when (memq system-type '(windows-nt))
     (progn
       (setq migemo-command "c:/Apps/cmigemo-default-win64/cmigemo.exe")
       (setq migemo-dictionary "c:/Apps/cmigemo-default-win64/dict/utf-8/migemo-dict")

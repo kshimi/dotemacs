@@ -11,7 +11,7 @@
 
 ;; package initialize
 (require 'package)
-(let ((protocol (if (eq (window-system) 'w32) "http://" "https://")))
+(let ((protocol "https://"))
   (add-to-list 'package-archives (cons "melpa" (concat protocol "melpa.org/packages/")) t)
   (add-to-list 'package-archives (cons "melpa-stable" (concat protocol "stable.melpa.org/packages/")) t))
 (setq package-archive-priorities
