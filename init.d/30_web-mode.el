@@ -4,7 +4,8 @@
   :mode
   "\\.html?\\'" "\\.erb\\'"
   :custom
-  (web-mode-engines-alist '(("erb" . "\\.erb\\'")))
+  (web-mode-engines-alist '(("erb" . "\\.erb\\'")
+                            ("django" . "\\.html\\'")))
   :config
   (defun web-mode-hook ()
     ;;    (setq web-mode-markup-indent-offset 2)
