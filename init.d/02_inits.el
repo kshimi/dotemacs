@@ -16,9 +16,7 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-(load-library "term/bobcat")
-(when (fboundp 'terminal-init-bobcat) (terminal-init-bobcat))
-(define-key input-decode-map (kbd "<backspace>") (kbd "C-h"))
+(keyboard-translate ?\C-h ?\C-?)
 
 (use-package exec-path-from-shell
   :if (memq system-type '(darwin))
