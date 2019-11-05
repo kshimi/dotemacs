@@ -33,6 +33,10 @@
 (set-face-attribute 'cursor nil :background "tomato")
 (set-face-attribute 'region nil :background "#493E54" :underline "peach puff")
 
+(setq backup-directory-alist
+      (cons (cons ".*" (expand-file-name "~/.emacs.d/backup"))
+            backup-directory-alist))
+
 (when (window-system)
   (setq frame-title-format '(:eval (if (buffer-file-name) " %f" " %b"))))
 
