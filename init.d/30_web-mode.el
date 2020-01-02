@@ -2,10 +2,12 @@
 ;;; Code:
 (use-package web-mode :ensure t
   :mode
-  "\\.html?\\'" "\\.erb\\'"
+  "\\.html?\\'" "\\.erb\\'" "\\.jsp\\'" "\\.s?css\\'"
   :custom
   (web-mode-engines-alist '(("erb" . "\\.erb\\'")
-                            ("django" . "\\.html\\'")))
+                            ("jsp" . "\\.html\\'")
+                            ("jsp" . "\\.jsp\\'")
+                            ))
   :config
   (defun web-mode-hook ()
     ;;    (setq web-mode-markup-indent-offset 2)
