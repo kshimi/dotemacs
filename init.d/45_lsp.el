@@ -2,6 +2,7 @@
 ;;; Code:
 (use-package lsp-mode :ensure t
   :hook
+  (python-mode . lsp)
   (ruby-mode . lsp)
   :custom
   (lsp-enable-indentation nil)
@@ -20,9 +21,3 @@
   :custom
   (company-lsp-cache-candidates nil)
   (company-lsp-enable-recompletion nil))
-(use-package lsp-python-ms
-  :ensure t
-  :hook
-  (python-mode . (lambda ()
-                   (require 'lsp-python-ms)
-                   (lsp))))  ; or lsp-deferred
