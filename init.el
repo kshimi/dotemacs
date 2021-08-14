@@ -40,7 +40,6 @@
     (leaf el-get :ensure t)
     (leaf blackout :ensure t)
     (leaf magit :ensure t)
-    (leaf projectile :ensure t)
 
     :config
     ;; initialize leaf-keywords.el
@@ -60,6 +59,28 @@
   :ensure t
   :bind (("C-c e" . macrostep-expand)))
 
+(leaf selectrum
+  :ensure t
+  :config
+  (selectrum-mode +1))
+
+(leaf consult
+  :ensure t
+  :init
+  (leaf orderless :ensure t)
+  :config
+  (setq completion-styles '(orderless)))
+
+(leaf marginalia
+  :ensure t
+  :init
+  (marginalia-mode))
+
+(leaf projectile
+  :ensure t
+  :config
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 ;; load init-loader
 (leaf init-loader
