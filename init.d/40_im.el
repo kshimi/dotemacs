@@ -1,13 +1,17 @@
 ;; ime settings
 (cond
  ((executable-find "mozc_emacs_helper")
-  (use-package mozc
+  (leaf mozc
     :ensure t
     :init
-    (use-package mozc-im :ensure t)
-    (use-package mozc-popup :ensure t)
+    (leaf mozc-im :ensure t)
+    (leaf mozc-popup :ensure t)
+    :require t
     :config
     (require 'cl-lib)
+    (require 'mozc)
+    (require 'mozc-im)
+    (require 'mozc-popup)
     (setq default-input-method "japanese-mozc-im")
     (setq mozc-candidate-style 'popup)
 

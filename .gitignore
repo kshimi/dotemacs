@@ -20,6 +20,7 @@ kkcrc
 /ac-comphist.dat
 /auto-install
 /elpa
+/el-get
 /eshell
 /url
 /var
