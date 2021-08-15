@@ -39,13 +39,14 @@
     ;; optional packages if you want to use :hydra, :el-get, :blackout,,,
     (leaf el-get :ensure t)
     (leaf blackout :ensure t)
+    (leaf ripgrep :ensure t)
     (leaf magit :ensure t)
 
     :config
     ;; initialize leaf-keywords.el
     (leaf-keywords-init)))
 
-;; ここにいっぱい設定を書く
+;; write a lot of settings here.
 
 (leaf leaf
   :config
@@ -58,29 +59,6 @@
 (leaf macrostep
   :ensure t
   :bind (("C-c e" . macrostep-expand)))
-
-(leaf selectrum
-  :ensure t
-  :config
-  (selectrum-mode +1))
-
-(leaf consult
-  :ensure t
-  :init
-  (leaf orderless :ensure t)
-  :config
-  (setq completion-styles '(orderless)))
-
-(leaf marginalia
-  :ensure t
-  :init
-  (marginalia-mode))
-
-(leaf projectile
-  :ensure t
-  :config
-  (projectile-mode +1)
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 ;; load init-loader
 (leaf init-loader

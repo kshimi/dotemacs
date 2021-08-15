@@ -1,7 +1,7 @@
 ;; set frame size
 (setq initial-frame-alist
       '((top . 0) (left . 0)
-	(height . 61) (width . 85)
+	(height . 62) (width . 105)
         (alpha . (95 . 85))))
 
 (set-face-attribute 'default nil
