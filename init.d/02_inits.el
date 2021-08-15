@@ -23,7 +23,6 @@
 
 (eval-and-compile
   (add-to-list 'load-path "~/.emacs.d/auto-install")
-  (add-to-list 'load-path "~/.emacs.d/lib")
   (add-to-list 'load-path "~/.emacs.d/el-get")
   )
 

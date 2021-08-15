@@ -1,3 +1,6 @@
+(leaf mozc-el-extensions
+  :el-get iRi-E/mozc-el-extensions)
+
 ;; ime settings
 (cond
  ((executable-find "mozc_emacs_helper")
