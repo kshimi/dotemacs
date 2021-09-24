@@ -7,6 +7,7 @@
 
   (setq-default standard-indent 2)
   (setq-default indent-tabs-mode nil)
+  (setq js-indent-level 2)
 
   (global-set-key (kbd "C-x C-b") 'ibuffer)
 
