@@ -1,42 +1,33 @@
-;;; init.el --- my local setting
-
-;;; Commentary:
-;;; Code:
-;(setq debug-on-error t)
-
-;; load proxy setting
-(let ((proxy-setting "~/.emacs.d/emacs-proxy.el"))
-  (if (file-exists-p proxy-setting)
-      (load proxy-setting)))
-
-;; package initialize
+;;; --- パッケージ管理の設定 ---
 (require 'package)
-(let ((protocol "https://"))
-  (add-to-list 'package-archives (cons "melpa" (concat protocol "melpa.org/packages/")) t)
-  (add-to-list 'package-archives (cons "melpa-stable" (concat protocol "stable.melpa.org/packages/")) t))
-(setq package-archive-priorities
-      '(("gnu" . 5) ("melpa-stable" . 10) ("melpa" . 0)))
-(setq custom-file (locate-user-emacs-file "custom.el"))
-(when (file-exists-p custom-file)
-  (load custom-file))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-;; load use-package
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'bind-key)
-  (package-install 'use-package))
+;; Emacs 29以降は use-package が標準搭載
+(require 'use-package)
+(setq use-package-always-ensure t)
 
-;; load init-loader
-(unless (package-installed-p 'init-loader)
-  (package-refresh-contents)
-  (package-install 'init-loader))
-(require 'init-loader)
-(setq init-loader-show-log-after-init nil)
-(init-loader-load "~/.emacs.d/init.d/")
+;;; --- 設定ファイル分割のための準備 ---
+(defvar conf-dir (expand-file-name "conf" user-emacs-directory))
 
-;; start emacs server for emacsclient
-;(unless (server-running-p)
-;  (server-start))
+;; confディレクトリが存在しなければ作成
+(unless (file-exists-p conf-dir)
+  (make-directory conf-dir))
 
-;;; init.el ends here
+;; conf内の .el ファイルをすべてロードする関数
+(let ((el-files (directory-files conf-dir t "\\.el$")))
+  (dolist (file el-files)
+    (load file)))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(markdown-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(show-paren-match ((t (:background "#454b68" :foreground "#00ffff" :weight bold :underline t))))
+ '(vertico-current ((t (:background "#3d425b" :foreground "#ffffff" :weight bold)))))
