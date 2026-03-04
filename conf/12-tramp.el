@@ -9,3 +9,6 @@
   (tramp-completion-reread-directory-timeout 60)
   ;; 接続を維持する
   (tramp-persistency-file-name (expand-file-name "tramp" user-emacs-directory)))
+
+(setq tramp-ssh-controlmaster-options
+      "-o ControlMaster=auto -o ControlPath='tramp.%%r@%%h:%%p' -o ControlPersist=600")

@@ -18,6 +18,10 @@
 (let ((el-files (directory-files conf-dir t "\\.el$")))
   (dolist (file el-files)
     (load file)))
+
+;; Native Compile の警告バッファを自動で出さないようにする
+(setq native-comp-async-report-warnings-errors 'silent)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

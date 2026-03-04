@@ -19,7 +19,7 @@
 
 ;;; --- フレーム（ウィンドウ）設定 ---
 (setq initial-frame-alist
-      '((top . 22) (left . 1.0)
+      '((top . 1.0) (left . 1.0)
         (height . 58) (width . 140)))
 
 ;; Emacs 29以降の透明度設定 (alpha-background)
