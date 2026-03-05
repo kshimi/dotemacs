@@ -10,5 +10,7 @@
   ;; 接続を維持する
   (tramp-persistency-file-name (expand-file-name "tramp" user-emacs-directory)))
 
-(setq tramp-ssh-controlmaster-options
-      "-o ControlMaster=auto -o ControlPath='tramp.%%r@%%h:%%p' -o ControlPersist=600")
+(when (or (eq system-type 'darwin)
+          (eq system-type 'gnu/linux))
+  (setq tramp-ssh-controlmaster-options
+        "-o ControlMaster=auto -o ControlPath='tramp.%%r@%%h:%%p' -o ControlPersist=600"))

@@ -25,6 +25,7 @@
          ("M-s l" . consult-line)
          ;; ファイル内検索 (grep系)
          ("M-s g" . consult-grep)
+         ("M-s r" . consult-ripgrep)
          ;; ヘルプ系の強化
          ("C-h i" . consult-info))
   :config
