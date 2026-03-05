@@ -19,8 +19,8 @@
 
 ;;; --- フレーム（ウィンドウ）設定 ---
 (setq initial-frame-alist
-      '((top . 1.0) (left . 1.0)
-        (height . 58) (width . 140)))
+      '((top . 0.0) (left . 1.0)
+        (height . 65) (width . 140)))
 
 ;; Emacs 29以降の透明度設定 (alpha-background)
 ;; 背後の壁紙がほんのり透ける、より綺麗な透明化です
