@@ -13,8 +13,7 @@
   :bind (:map markdown-mode-map
               ;; C-c i で見出し一覧を表示してジャンプ（Consult連携）
               ("C-c i" . consult-imenu-multi)
-              ;; C-c p でブラウザプレビュー
-              ("C-c p" . markdown-preview))
+	      )
   :custom-face
   ;; 表のコントラストを改善（icebergテーマに合わせた明るい文字色と控えめな背景色）
   (markdown-table-face ((t (:foreground "#cdd1e6" :background "#2e313f")))))
