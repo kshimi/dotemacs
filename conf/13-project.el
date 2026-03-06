@@ -3,6 +3,9 @@
   (projectile-mode +1)
   :bind-keymap
   ("C-c p" . projectile-command-map)
+  :bind
+  (:map projectile-command-map
+        ("v" . projectile-run-vterm))
   :custom
   (projectile-project-search-path '("~/projects" "~/work")) ; よく使うディレクトリがあれば
   )
