@@ -5,6 +5,8 @@
   (setq mac-option-modifier 'alt)
   ;; Macのインライン日本語入力を有効化
   (mac-auto-ascii-mode 1)
+  ;; ミニバッファ等で自動的に英数モードにする設定
+  (add-hook 'minibuffer-setup-hook (lambda () (mac-auto-ascii-mode 1)))
 
   ;;; --- フォント設定 (Apple Silicon Mac 最適化) ---
   (defun my-setup-font-mac ()
