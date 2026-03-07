@@ -10,13 +10,9 @@
     :ensure t
     :config
     (tr-ime-standard-install)
-    (setq default-input-method "japanese-jisx0208-tr-ime")
-    ;; IMEのON/OFFでカーソル色を変える
-    (setq-default cursor-type '(bar . 2))
-    (add-hook 'tr-ime-on-hook
-              (lambda () (set-cursor-color "Red")))
-    (add-hook 'tr-ime-off-hook
-              (lambda () (set-cursor-color "Tomato"))))
+    (setq default-input-method "W32-IME")
+    (w32-ime-initialize)
+    )
 
   ;; Alt/Ctrl の挙動
   ;; WindowsキーをSuperに、変換キーなどの挙動を調整
@@ -32,11 +28,11 @@
   ;;; --- フォント設定 (Windows 向け) ---
   (defun my-setup-font-windows ()
     (let* ((font-name "PlemolJP Console")
-           (font-size 12) ; Windowsでは12〜14程度が適切
+           (font-size 20) ; Windowsでは12〜14程度が適切
            (font-spec (font-spec :family font-name :size font-size)))
       
       ;; 英数フォントの設定
-      (set-face-attribute 'default nil :family font-name :height (* font-size 10))
+      (set-face-attribute 'default nil :family font-name :height (* font-size 6))
       
       ;; 日本語フォントの設定
       (set-fontset-font nil 'japanese-jisx0208 font-spec)
