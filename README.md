@@ -1,42 +1,51 @@
-# Modern Emacs Configuration for Apple Silicon Mac
+# Modern Emacs Configuration (macOS / Windows / WSL2)
 
-Apple Silicon (M1/M2/M3) Mac での利用に最適化した、クリーンでモダンな Emacs 設定テンプレートです。
-複雑な設定フレームワーク（Doom や Spacemacs）を使わず、Emacs 29+ の標準機能と厳選されたモダンなパッケージを組み合わせることで、**軽量・高速・メンテナンス性**の両立を目指しています。
+macOS (Apple Silicon)、Windows ネイティブ、および WSL2 での利用に最適化した、クリーンでモダンな Emacs 設定テンプレートです。
+Emacs 29+ の標準機能と厳選されたモダンなパッケージを組み合わせ、**軽量・高速・メンテナンス性**の両立を目指しています。
 
 ---
 
-## ✨ コンセプト
+## 特徴
 
-- **Simple & Modular**: 全ての設定を `conf/` 配下に分割。何がどこに書いてあるか一目でわかります。
-- **Mac Native Experience**: macOS 標準のインライン日本語入力や、Command キーを Meta としたキーバインド、PlemolJP フォントによる美しい表示。
-- **Modern Completion**: Vertico + Orderless + Consult を採用し、直感的で強力な検索・補完体験を提供。
-- **Ready for Development**: Magit, vterm, Project.el など、エンジニアに必須のツールを最適化して導入。
+- **マルチプラットフォーム対応**: macOS, Windows (Native), WSL2 の各環境を自動判別し、最適な設定（IME、フォント、キーバインド）を適用します。
+- **Simple & Modular**: 全ての設定を `conf/` 配下に分割。OS 固有の設定と共通設定が明確に分離されています。
+- **Modern Completion**: Vertico + Orderless + Consult を採用。高速で直感的なミニバッファ補完を提供します。
+- **Ready for Development**: Magit, vterm, Project.el など、開発に必要なツールを最適化して導入済み。
+- **Beautiful UI**: Iceberg テーマと PlemolJP フォントによる、視認性が高く美しいコーディング環境。
 
-## 📸 スクリーンショット / 外観
+## 外観 / デザイン
 
 - **Theme**: [iceberg.vim](https://cocopon.github.io/iceberg.vim/) (Iceberg Theme)
 - **Font**: [PlemolJP Console](https://github.com/yuru7/PlemolJP)
-- **Transparency**: Emacs 29 の `alpha-background` を活用した、文字の視認性を損なわない背景透過。
 
-## 🛠 前提条件
-
-この設定をフルに活用するには、以下の環境を推奨します。
+## 前提条件
 
 - **Emacs 29.1 以上**: `use-package` や透過設定などの標準機能を利用。
-  - macOS の場合、`emacs-plus` または `emacs-mac` を推奨。
-- **Font**: `PlemolJP Console`
-- **System Tools**:
-  - `cmake` (vterm のビルドに必要)
-  - `ripgrep` (consult-grep で高速検索するために必要)
+- **Font**: `PlemolJP Console` (推奨)
+- **Common Tools**: `ripgrep` (consult-grep 等での高速検索に必要)
 
+### macOS
+- `emacs-plus` または `emacs-mac` を推奨。
 ```bash
-# macOS での推奨インストール例
 brew tap d12frosted/emacs-plus
 brew install emacs-plus@29 --with-native-comp
 brew install cmake ripgrep
 ```
 
-## 📦 導入方法
+### Windows (Native)
+- [GNU Emacs 公式バイナリ](https://www.gnu.org/software/emacs/download.html#windows) または winget でのインストールを推奨。
+```powershell
+winget install --id GNU.Emacs -e --source winget
+winget install --id Git.Git -e --source winget
+winget install --id BurntSushi.ripgrep.MSVC -e --source winget
+```
+
+### WSL2 (Ubuntu 等)
+```bash
+sudo apt update && sudo apt install emacs ripgrep cmake
+```
+
+## 導入方法
 
 1. 既存の設定をバックアップ：
    ```bash
@@ -46,39 +55,38 @@ brew install cmake ripgrep
    ```bash
    git clone https://github.com/YOUR_USERNAME/emacs-d.git ~/.emacs.d
    ```
-3. Emacs を起動すると、初回に自動で全パッケージのダウンロードとインストールが始まります。
+3. Emacs を起動すると、初回に自動でパッケージのダウンロードとインストールが始まります。
 
-## 📂 ディレクトリ構成とモジュール
+## ディレクトリ構成
 
-設定は `conf/` ディレクトリ内で番号順に読み込まれます。
+設定は `conf/` 内のファイルが順次ロードされます。
 
 ```text
 .emacs.d/
-├── init.el             # エントリポイント。パッケージ管理と conf/ の読み込み
+├── init.el             # エントリポイント。パッケージ管理とロード設定
 └── conf/
-    ├── 01-display-mac  # 外観、フォント、テーマ、透過設定
-    ├── 02-editing      # インデント、括弧、基本挙動
-    ├── 03-mac          # macOS 固有のキーバインド、IME 連携
+    ├── 01-display      # 外観、共通フォント、テーマ、透過設定
+    ├── 02-editing      # 基本挙動、編集支援
+    ├── 03-mac          # macOS 固有（Commandキー、IME連携等）
+    ├── 03-windows      # Windows/WSL2 固有（IME、WSLクリップボード等）
     ├── 04-completion   # Vertico/Consult 等のモダン補完
+    ├── 05-whichkey     # キーバインドのガイド表示
     ├── 11-magit        # Git 操作 (Magit)
     └── 14-vterm        # 高速ターミナル (vterm)
 ```
 
-## ⌨️ 主なキーバインド
+##  主なキーバインド
 
 | キー | 機能 |
 |:--- |:--- |
 | `C-x g` | Magit Status (Git 操作) |
 | `C-x b` | Consult Buffer (プレビュー付きバッファ切り替え) |
-| `M-s l` | Consult Line (ファイル内高速検索) |
+| `M-s l` | Consult Line (ファイル内検索) |
+| `M-s r` | Consult Ripgrep (プロジェクト内高速検索) |
 | `M-x vterm` | ターミナル起動 |
 
 ---
 
-## 📝 ライセンス
+## ライセンス
 
 [MIT License](LICENSE)
-
-## 🤝 コントリビューション
-
-自分好みの設定の参考にしたり、Fork して独自の環境を構築するベースとしてお使いください。改善の提案やバグ報告も歓迎します。
