@@ -23,4 +23,10 @@
       (set-fontset-font nil 'katakana-jisx0201 font-spec)))
 
   ;; 起動時および新しくフレームを作った時にフォントを適用
-  (add-hook 'after-init-hook 'my-setup-font-mac))
+  (add-hook 'after-init-hook 'my-setup-font-mac)
+
+  ;;; --- フレーム（ウィンドウ）設定 ---
+  (setq initial-frame-alist
+	'((top . 0.0) (left . 1.0)
+          (height . 65) (width . 140)))
+  )

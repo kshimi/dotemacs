@@ -1,7 +1,7 @@
 ;;; --- 最小限の見た目と挙動 ---
 (setq inhibit-startup-message t) ; スタートアップ画面を表示しない
 (tool-bar-mode -1)               ; ツールバー非表示
-(menu-bar-mode 1)                ; メニューバーは慣れるまで表示（後で消せます）
+(menu-bar-mode -1)               ; メニューバーは非表示
 (scroll-bar-mode -1)             ; スクロールバー非表示
 (global-display-line-numbers-mode t) ; 行番号表示
 
@@ -16,11 +16,6 @@
   (custom-set-faces
    ;; Verticoの現在の選択行を目立たせる
    '(vertico-current ((t (:background "#3d425b" :foreground "#ffffff" :weight bold))))))
-
-;;; --- フレーム（ウィンドウ）設定 ---
-(setq initial-frame-alist
-      '((top . 0.0) (left . 1.0)
-        (height . 65) (width . 140)))
 
 ;; ピクセル単位でリサイズを許可（ターミナルのガタつき防止に有効）
 (setq frame-resize-pixelwise t)
